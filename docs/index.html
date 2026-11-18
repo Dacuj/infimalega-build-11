@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Film, collezioni, archivio e contatti di Infimalega, progetto di moda indipendente nato a Napoli.">
+  <title>Infimalega</title>
+  <link rel="icon" href="media/portfolio/croce.png" type="image/png">
+  <link rel="preload" as="font" type="font/woff2" href="type/archivo-narrow-bold.woff2" crossorigin>
+  <link rel="preload" as="image" href="media/portfolio/proiettore-aura-radiale.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="media/portfolio/infimalega.png" fetchpriority="high">
+  <link rel="preload" as="image" href="media/portfolio/croce.png">
+  <link rel="stylesheet" href="display-type.css">
+  <link rel="stylesheet" href="terminal-pulse.css">
+  <link rel="stylesheet" href="home.css?v=film-cuts-10">
+  <link rel="stylesheet" href="film-stage.css?v=pointer-focus-10">
+  <link rel="stylesheet" href="inner-nav.css?v=page-wipe">
+  <script src="inner-nav.js?v=page-wipe"></script>
+  <script>
+    if (['', '#film'].includes(location.hash) &&
+        performance.getEntriesByType?.('navigation')[0]?.type !== 'back_forward' &&
+        !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('home-mark-entry');
+    }
+  </script>
+  <script src="film-stage.js?v=pointer-focus-10" defer></script>
+  <script src="home.js?v=terminal-entry-8" defer></script>
+</head>
+<body>
+  <main aria-label="Infimalega">
+    <section class="screen film" id="film" tabindex="-1" aria-label="Film e immagini di Infimalega">
+      <div class="thermal-backdrop">
+        <div class="thermal-frame">
+          <img id="thermal-still" src="media/portfolio/proiettore-aura-radiale.jpg"
+            alt="" width="1280" height="720" fetchpriority="high" draggable="false">
+          <video id="thermal-film" width="1280" height="720" muted loop playsinline
+            disablepictureinpicture disableremoteplayback preload="auto"
+            poster="media/portfolio/proiettore-aura-radiale.jpg" aria-hidden="true">
+            <source src="media/portfolio/proiettore-aura-radiale-web.mp4" type="video/mp4">
+          </video>
+          <h1 id="thermal-wordmark">
+            <span class="entry-art">
+              <span class="entry-impression">
+                <img class="entry-word" src="media/portfolio/infimalega.png" alt="Infimalega" width="1000" height="276" draggable="false">
+                <img class="entry-cross" src="media/portfolio/croce.png" alt="" width="280" height="279" draggable="false">
+              </span>
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div id="film-stage"></div>
+      <a class="edge-action film-menu" href="#menu" aria-controls="menu">Menu</a>
+    </section>
+
+    <nav class="screen menu-screen" id="menu" tabindex="-1" aria-label="Menu principale" hidden inert>
+      <a class="wordmark menu-mark" href="#film" aria-label="Infimalega, torna alla galleria iniziale"><img src="media/portfolio/infimalega.png" width="1000" height="276" alt="" draggable="false"></a>
+      <div class="menu-layout">
+        <div class="menu-line index-item collections-heading">
+          <a class="menu-label" id="collections-toggle" href="#collezioni" aria-controls="collezioni" aria-expanded="false" lang="en">Collections</a>
+        </div>
+        <div class="menu-line index-item archive-row">
+          <a class="menu-label" href="shop.html">Archivio</a>
+        </div>
+        <div class="menu-line index-item about-row">
+          <a class="menu-label" href="about.html" lang="en">About</a>
+        </div>
+        <div class="menu-line index-item contact-row">
+          <a class="menu-label" href="contatti.html">Contatti</a>
+        </div>
+        <div id="collezioni" class="collection-names" hidden inert>
+          <div class="collection-index">
+            <h2 id="collection-index-title" tabindex="-1" lang="en">Collections</h2>
+            <ul aria-labelledby="collection-index-title">
+              <li><a href="amore-tossico.html">Amore Tossico</a></li>
+              <li><a href="cuvee-semaine.html">Cuvée Semaine</a></li>
+              <li><a href="street-study.html">Street Study</a></li>
+              <li><a href="insecto.html">Insecto</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a class="edge-action close-menu" href="#film" lang="en">Close</a>
+    </nav>
+
+    <noscript>
+      <style>.film { position: relative; height: 78vh } .film-menu { display: none } .simple-menu { padding: 1rem }</style>
+      <nav class="simple-menu" aria-label="Menu">
+        <a href="amore-tossico.html">Amore Tossico</a>
+        <a href="cuvee-semaine.html">Cuvée Semaine</a>
+        <a href="street-study.html">Street Study</a>
+        <a href="insecto.html">Insecto</a>
+        <a href="shop.html">Archivio</a>
+        <a href="about.html">About</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+    </noscript>
+  </main>
+</body>
+</html>

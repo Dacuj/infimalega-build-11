@@ -1,0 +1,7 @@
+[build]
+  publish = "docs"
+  # The site is already built and committed in docs.
+  command = "test -f docs/index.html"
+
+[build.processing.html]
+  pretty_urls = false

@@ -1,0 +1,309 @@
+:root {
+  color-scheme: dark;
+  background: black;
+  color: white;
+  font: 700 16px/1 "Indice", "Arial Narrow", Helvetica, sans-serif;
+  --edge: 40px;
+  --small-type: 40px;
+  --nav-type: 170px;
+  --ease: cubic-bezier(.65,.05,.35,1);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { background: #000; }
+h1, ul { margin: 0; padding: 0; }
+a, button { color: inherit; font: inherit; -webkit-tap-highlight-color: transparent; }
+a { text-decoration: none; }
+button { cursor: pointer; border: 0; border-radius: 0; padding: 0; }
+a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+[hidden] { display: none !important; }
+.screen {
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: #000;
+  isolation: isolate;
+}
+.edge-action, .menu-label {
+  text-transform: uppercase;
+}
+.wordmark img {
+  display: block;
+  height: min(var(--small-type), 7dvh);
+  width: auto;
+  filter: invert(1);
+}
+.edge-action {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--small-type);
+  line-height: 1;
+  letter-spacing: .025em;
+}
+.film {
+  z-index: 1;
+  background: #000;
+}
+.film:focus { outline: 0; }
+.thermal-backdrop {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  pointer-events: none;
+}
+.thermal-frame {
+  position: relative;
+  width: max(100vw, 177.777778vh);
+  width: max(100vw, 177.777778dvh);
+  aspect-ratio: 16 / 9;
+  /* A tiny copy of the actual opening frame paints while the full poster is in flight. */
+  background: #a65e40 url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAQTGF2YzYyLjI4LjEwMQD/2wBDABEMDQ8NCxEPDg8TEhEUGSocGRcXGTQlJx8qPTZBQDw2OzpETGJTREhcSTo7VXRWXGVobW5tQlJ4gHdqf2JrbWn/2wBDARITExkWGTIcHDJpRjtGaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWn/wAARCAAbADADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAgUGAwT/xAAiEAACAgICAgMBAQAAAAAAAAABAgADBBESISIxBRNRYaH/xAAXAQEBAQEAAAAAAAAAAAAAAAAFBAED/8QAHREAAgMAAwEBAAAAAAAAAAAAAQIAAxEEElEhQf/aAAwDAQACEQMRAD8A4MRzXmWK/snlGn3gkLJunO+y6p7OmA4sf2OrVY1h6uyBDORUVYdv2LKVcaJ349ircVbQPuZ5dqnIVVI37gL3wYjy1Oe4fXzsUbcj1JlGmYFG7NLMnwI/JPZ7i2x++lG4zcmvEZ7emIk/dZzdteiYlw6wCWnO9gq57A2Qdyh+GzDdSa2Pmn+iTpnV8Y7JnV8TrZ0ZVyaxZWQZLS5V89lej12p5DTLMsi2utOKjbtBZiuyp1MXYnZJ7Agir9iAWKPmMk7WkH+mKod7M9zsx2SYMfqQIgWHWv3Ymf/Z") center / 100% 100% no-repeat;
+}
+#thermal-still, #thermal-film {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+}
+#thermal-film { opacity: 0; }
+.thermal-frame.has-video-frame #thermal-film {
+  opacity: 1;
+  transition: opacity 120ms ease-out;
+}
+#film-stage { position: absolute; inset: 0; z-index: 1; }
+/* Registered to the wordmark printed in the 1280 × 720 master, including its slight vertical offset. */
+#thermal-wordmark {
+  position: absolute;
+  z-index: 2;
+  left: 50.023438%;
+  top: 50.2375%;
+  width: 16.080469%;
+  height: 7.856944%;
+  transform: translate(-50%, -50%);
+  line-height: 0;
+  user-select: none;
+}
+#thermal-wordmark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+}
+.entry-art {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+#thermal-wordmark .entry-cross {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: brightness(0) invert(1);
+}
+
+.entry-impression {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .home-mark-entry {
+    --entry-hold: 2000ms;
+    --entry-travel: 650ms;
+    --opening-width: min(85vw, max(24rem, 32vw), 160vh);
+  }
+  .home-mark-entry .entry-art {
+    animation: entry-pullback var(--entry-travel) cubic-bezier(.4,0,.16,1) var(--entry-hold) both;
+  }
+  .home-mark-entry .entry-impression {
+    animation: entry-phosphor var(--entry-hold) ease-in-out both;
+  }
+  .home-mark-entry :is(.entry-word, .entry-cross) {
+    --word-frame: 1;
+    --cross-frame: 0;
+    animation: entry-mark-cut var(--entry-hold) step-end both;
+  }
+  .home-mark-entry #thermal-wordmark .entry-cross {
+    --word-frame: 0;
+    --cross-frame: 1;
+    display: block;
+    width: 36%;
+  }
+  .home-mark-entry #film::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: #000;
+    animation: entry-reveal var(--entry-travel) ease-in-out var(--entry-hold) both;
+  }
+  .home-mark-entry :is(.film-menu, #film-stage) {
+    animation: entry-controls var(--entry-travel) ease-out var(--entry-hold) both;
+  }
+  @keyframes entry-pullback {
+    from {
+      width: var(--opening-width);
+      height: calc(var(--opening-width) * .276);
+      filter: brightness(.82) blur(var(--terminal-softness)) drop-shadow(0 0 3px var(--terminal-halo));
+    }
+    to { width: 100%; height: 100%; filter: none; }
+  }
+  /* At 24 fps the thermal film cuts to the cross for a single frame.
+     In this 48-frame intro it lands on frames 3, 5, 14–15, 28, 31 and 42. */
+  @keyframes entry-mark-cut {
+    0%, 8.3333%, 12.5%, 33.3333%, 60.4167%, 66.6667%, 89.5833%, 100% { opacity: var(--word-frame); }
+    6.25%, 10.4167%, 29.1667%, 58.3333%, 64.5833%, 87.5% { opacity: var(--cross-frame); }
+  }
+  @keyframes entry-phosphor {
+    0%, 12.5%, 29%, 61%, 88% { opacity: .95; }
+    21% { opacity: .68; }
+    49% { opacity: .76; }
+    77% { opacity: .64; }
+    100% { opacity: 1; }
+  }
+  @keyframes entry-reveal { from { opacity: 1; } to { opacity: 0; } }
+  @keyframes entry-controls {
+    from { visibility: hidden; opacity: 0; }
+    to { visibility: visible; opacity: 1; }
+  }
+}
+
+@keyframes menu-ink-in { from { opacity: 0; } }
+.film-menu, .close-menu {
+  position: absolute;
+  bottom: max(var(--edge), env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.menu-screen { z-index: 4; }
+.menu-mark {
+  position: absolute;
+  top: max(var(--edge), env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.menu-mark:hover img { opacity: .76; }
+.menu-layout {
+  position: relative;
+  display: grid;
+  grid-template: minmax(0,1fr) repeat(4,min-content) minmax(0,1fr) / minmax(0,1fr);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: min(var(--nav-type), 16.8dvh, 16.8vw);
+  line-height: .98;
+  letter-spacing: -.012em;
+}
+.menu-line { overflow: hidden; }
+.collections-heading { grid-area: 2/1; z-index: 1; }
+.archive-row { grid-area: 3/1; }
+.about-row { grid-area: 4/1; }
+.contact-row { grid-area: 5/1; }
+.menu-label {
+  display: inline-block;
+  vertical-align: top;
+  transition: color .35s ease;
+}
+.menu-screen:focus,
+.menu-screen :focus { outline: none; box-shadow: none; }
+.menu-screen a { touch-action: manipulation; }
+.menu-screen:not(.touch-navigation) a:focus-visible {
+  text-decoration-line: underline;
+  text-decoration-thickness: .05em;
+  text-underline-offset: .09em;
+}
+.menu-screen:not(.touch-navigation) .menu-mark:focus-visible img {
+  border-bottom: 2px solid #000;
+}
+.menu-line:focus-within { overflow: visible; }
+.menu-screen.arriving { --menu-delay: .5s; }
+.menu-screen.after-veil { --menu-delay: 0s; }
+.menu-screen:is(.arriving, .after-veil) .menu-label,
+.menu-screen:is(.arriving, .after-veil) .collection-names a {
+  animation: menu-reveal .62s cubic-bezier(.2,.7,.2,1) var(--menu-delay) backwards;
+}
+.menu-screen:is(.arriving, .after-veil) .archive-row .menu-label { animation-delay: calc(var(--menu-delay) + .055s); }
+.menu-screen:is(.arriving, .after-veil) .about-row .menu-label { animation-delay: calc(var(--menu-delay) + .11s); }
+.menu-screen:is(.arriving, .after-veil) .contact-row .menu-label { animation-delay: calc(var(--menu-delay) + .15s); }
+.menu-screen:is(.arriving, .after-veil) :is(.menu-mark, .close-menu) {
+  animation: menu-ink-in .5s ease var(--menu-delay) backwards;
+}
+@keyframes menu-reveal { from { transform: translateY(103%); } }
+.index-item .menu-label { transition: transform .55s var(--ease), opacity .5s, color .35s; }
+.menu-screen.is-collections .index-item .menu-label { transform: translateY(105%); opacity: 0; }
+.collection-names {
+  position: absolute;
+  inset: calc(max(var(--edge), env(safe-area-inset-top)) + var(--small-type) + 12px) 0
+         calc(max(var(--edge), env(safe-area-inset-bottom)) + 54px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  z-index: 1;
+}
+.collection-names::-webkit-scrollbar { display: none; }
+.collection-index {
+  flex: none;
+  width: 100%;
+  margin-block: auto;
+  padding: 8px max(12px, env(safe-area-inset-right)) 12px max(12px, env(safe-area-inset-left));
+}
+.collection-index h2 {
+  margin: 0 0 clamp(16px, 3.6dvh, 36px);
+  color: #bdbdbd;
+  font: 700 clamp(15px, 1.6vw, 21px)/1.2 "Indice", "Arial Narrow", sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.collection-names ul {
+  list-style: none;
+  font-size: clamp(30px, min(12vw, 10.5dvh), 102px);
+  line-height: 1.08;
+  letter-spacing: -.018em;
+}
+.collection-names li + li { margin-top: clamp(3px, .65dvh, 8px); }
+.collection-names a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #fff;
+  transition: color .35s;
+}
+.edge-action, .menu-mark { transition: color .32s; }
+@media (hover: hover) {
+  .menu-label:hover, .edge-action:hover, .menu-mark:hover, .collection-names a:hover { color: #929292; }
+}
+.simple-menu { padding: 0 1rem; text-align: center; }
+.simple-menu a { display: inline-block; margin: .4rem; }
+@media (max-width: 1100px), (max-height: 700px) { :root { --nav-type: 113px; } }
+@media (max-width: 991px) { :root { --edge: 20px; } }
+@media (max-width: 750px), (max-height: 500px) { :root { --nav-type: 60px; } }
+@media (max-width: 719px) { :root { --small-type: 30px; } }
+@media (max-width: 375px) { :root { --nav-type: 50px; } }
+@media (max-height: 480px) {
+  :root { --edge: 8px; --small-type: 25px; }
+  .edge-action { min-height: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}

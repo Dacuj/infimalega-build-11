@@ -1,0 +1,10 @@
+:root {
+  --terminal-beat: 480ms;
+  --terminal-softness: .72px;
+  --terminal-halo: #c6c6bc60;
+}
+
+@keyframes terminal-blink {
+  0%, 100% { opacity: .95; }
+  52%, 92% { opacity: .13; }
+}

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Indice";
+  src: local("Helvetica Neue Condensed Bold"), local("HelveticaNeue-CondensedBold"),
+       url("type/archivo-narrow-bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
