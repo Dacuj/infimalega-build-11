@@ -6,9 +6,9 @@
   const frames = [
     { href: "street-study.html", image: "street-01.webp", title: "Street Study, il gruppo sulla scalinata", ratio: 1.5, size: .17, x: -0.32, y: -0.29 },
     { href: "amore-tossico.html", image: "amore-03.webp", title: "Amore Tossico, ritratto", ratio: .8, size: .093, x: -0.17, y: -0.1 },
-    { href: "cuvee-semaine.html", image: "cuvee-semaine-film.jpg", film: "cuvee-semaine-film.mp4", title: "Cuvée Semaine, film", ratio: 1450/1080, size: .155, x: 0.44, y: -0.28 },
+    { href: "cuvee-semaine.html", image: "cuvee-semaine-landing-threshold.png", film: "cuvee-semaine-landing-threshold.mp4", title: "Cuvée Semaine, film", ratio: 1450/1080, size: .155, x: 0.44, y: -0.28 },
     { href: "insecto.html", image: "insecto-r0003077-164.webp", title: "Insecto, ritratto a righe", ratio: 2/3, size: .10, x: 0.29, y: 0.34 },
-    { href: "amore-tossico.html", image: "amore-tossico-film.jpg", film: "amore-tossico-film.mp4", title: "Amore Tossico, film della sfilata", ratio: 16/9, size: .18, x: -0.28, y: 0.32 },
+    { href: "amore-tossico.html", image: "amore-tossico-landing-threshold.png", film: "amore-tossico-landing-threshold.mp4", title: "Amore Tossico, film della sfilata", ratio: 16/9, size: .18, x: -0.28, y: 0.32 },
     { href: "cuvee-semaine.html", image: "cuvee-03.webp", title: "Cuvée Semaine, dettaglio della stampa", ratio: .75, size: .08, x: -0.71, y: -0.06 },
     { href: "street-study.html", image: "street-03.webp", title: "Street Study, figura davanti al murale", ratio: .8, size: .12, x: 0.7, y: 0.57 },
     { href: "insecto.html", image: "insecto-02.webp", title: "Insecto, ritratto capovolto", ratio: 907/1360, size: .115, x: 0, y: 0.78 },
