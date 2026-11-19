@@ -187,6 +187,7 @@ def import_archive(base, staging, excluded_ids):
 
 def main():
     catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+    garment_groups = {record["id"]: record["garmentGroup"] for record in catalog["products"] if "garmentGroup" in record}
     local_products = [record for record in catalog["products"] if not record.get("statusSource")]
     excluded_ids = {"INF-078", *(record["id"] for record in local_products)}
     with TemporaryDirectory(prefix=".archive-import-", dir=ROOT) as directory:
@@ -196,6 +197,9 @@ def main():
         except (HTTPError, URLError, RuntimeError) as error:
             print(f"Original host: {error}. Retrying via the Google Sites origin.", flush=True)
             products = import_archive(MIRROR, staging, excluded_ids)
+        for product in products:
+            if product["id"] in garment_groups:
+                product["garmentGroup"] = garment_groups[product["id"]]
         catalog["products"] = local_products + products
 
         # Install the new files before swapping the catalog. An interrupted

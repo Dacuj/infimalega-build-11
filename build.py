@@ -348,30 +348,25 @@ document("da-vicino.html", "Da vicino", "close-page", """
   </a>
 </main>""")
 
+shop_group_order = {"shirts": 0, "layers": 1, "bottoms": 2, "accessories": 3}
+shop_records = sorted(PRODUCTS, key=lambda record: shop_group_order.get(record.get("garmentGroup"), 0))
 rows = []
-for record in PRODUCTS:
+for record in shop_records:
     code = escape(record["id"])
     name = escape(record["name"])
     year = record["year"]
     materials = escape(record.get("detailMaterials") or record["materials"])
-    terms = escape(" ".join([record["id"], record.get("detailId", ""), record["name"], record["materials"], record.get("detailMaterials", ""), record.get("series", "")]))
-    rows.append(f'<tr data-year="{year}" data-terms="{terms}"><td>{code}</td><th scope="row"><a href="{product_href(record)}">{name}</a></th><td>{year}</td><td>{materials}</td></tr>')
+    rows.append(f'<tr><td>{code}</td><th scope="row"><a href="{product_href(record)}">{name}</a></th><td>{year}</td><td>{materials}</td></tr>')
 
-years = "".join(f'<option>{year}</option>' for year in sorted({p["year"] for p in PRODUCTS}, reverse=True))
 document("archivio.html", "Archivio", "archive", f"""
 {inner_header()}
 <main class="archive-content">
   <h1>Archivio</h1>
-  <form id="archive-filter" role="search" hidden>
-    <label>Cerca <input type="search" name="query"></label>
-    <label>Anno <select name="year"><option value="">Tutti</option>{years}</select></label>
-  </form>
   <table>
     <thead><tr><th scope="col">Codice</th><th scope="col">Capo</th><th scope="col">Anno</th><th scope="col">Materiali</th></tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <p id="empty" hidden>Nessun risultato.</p>
-</main>""", script="pages.js")
+</main>""")
 
 def shop_card(record):
     code = escape(record["id"])
@@ -448,7 +443,7 @@ def shop_item(record):
 {PHOTO_VIEWER}"""
 
 
-cards = "\n".join(shop_card(record) for record in PRODUCTS)
+cards = "\n".join(shop_card(record) for record in shop_records)
 document("shop.html", "Archivio", "shop-page", f"""
 {inner_header("shop")}
 <main class="shop-content">
