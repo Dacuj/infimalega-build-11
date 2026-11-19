@@ -25,7 +25,6 @@ function keepCollectionFilmPlaying(video, recoverSource, deferred = false) {
 
   function play() {
     if (pendingPlay || blockedByPolicy || video.error) return;
-    video.muted = true;
     const request = Promise.resolve(video.play());
     pendingPlay = request;
     request.catch((error) => {
@@ -59,7 +58,7 @@ function keepCollectionFilmPlaying(video, recoverSource, deferred = false) {
     const previous = video;
     const next = previous.cloneNode(true);
     next.autoplay = deferred && isVisible();
-    next.muted = true;
+    next.muted = previous.muted;
     if (source) next.querySelector("source").src = source;
     stopWatchingFrame();
     previous.pause();
@@ -185,6 +184,23 @@ function keepCollectionFilmPlaying(video, recoverSource, deferred = false) {
       watchFrame();
       checkTimer = window.setInterval(checkProgress, 2500);
     }
+  }
+
+  const sound = video.parentElement.querySelector(".film-sound");
+  if (sound) {
+    function showSoundState() {
+      sound.textContent = video.muted ? "Audio off" : "Audio on";
+      sound.setAttribute("aria-pressed", String(!video.muted));
+    }
+    sound.hidden = false;
+    showSoundState();
+    video.parentElement.addEventListener("volumechange", showSoundState, true);
+    sound.addEventListener("click", () => {
+      video.muted = !video.muted;
+      showSoundState();
+      blockedByPolicy = false;
+      if (video.paused && isVisible()) play();
+    });
   }
 
   // Keep native autoplay as a fallback when scripted visibility is unavailable.

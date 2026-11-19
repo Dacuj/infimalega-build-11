@@ -174,7 +174,7 @@ def import_product(card, staging):
     return record
 
 
-def import_archive(base, staging):
+def import_archive(base, staging, excluded_ids):
     def import_card(card):
         try:
             return import_product(card, staging)
@@ -182,19 +182,21 @@ def import_archive(base, staging):
             raise RuntimeError(f"{card['id']}: {error}") from error
 
     with ThreadPoolExecutor(max_workers=6) as workers:
-        return list(workers.map(import_card, archive_cards(base)))
+        return list(workers.map(import_card, (card for card in archive_cards(base) if card["id"] not in excluded_ids)))
 
 
 def main():
     catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+    local_products = [record for record in catalog["products"] if not record.get("statusSource")]
+    excluded_ids = {"INF-078", *(record["id"] for record in local_products)}
     with TemporaryDirectory(prefix=".archive-import-", dir=ROOT) as directory:
         staging = Path(directory)
         try:
-            products = import_archive(ORIGINAL, staging)
+            products = import_archive(ORIGINAL, staging, excluded_ids)
         except (HTTPError, URLError, RuntimeError) as error:
             print(f"Original host: {error}. Retrying via the Google Sites origin.", flush=True)
-            products = import_archive(MIRROR, staging)
-        catalog["products"] = products
+            products = import_archive(MIRROR, staging, excluded_ids)
+        catalog["products"] = local_products + products
 
         # Install the new files before swapping the catalog. An interrupted
         # download leaves the previous catalog and all its photos intact.

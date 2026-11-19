@@ -186,13 +186,13 @@
         },
         {
           "src": "media/amore-tossico-11.webp",
-          "caption": "INF-041, INF-078",
+          "caption": "INF-041",
           "look": 4,
           "frame": 2
         },
         {
           "src": "media/amore-tossico-12.webp",
-          "caption": "INF-041, INF-078",
+          "caption": "INF-041",
           "look": 4,
           "frame": 3
         },
@@ -317,6 +317,192 @@
     }
   ],
   "products": [
+    {
+      "id": "INF-135",
+      "archiveName": "VASCO longsleeve",
+      "archiveYear": 2026,
+      "materials": "100% Reclaimed Cotton",
+      "name": "VASCO longsleeve",
+      "year": 2026,
+      "series": "Unassigned",
+      "detailMaterials": "100% Reclaimed Cotton",
+      "origin": "Naples",
+      "status": "Available",
+      "shop": null,
+      "src": "media/shop-cutouts/inf-135-cover-c057d3f77e57.webp",
+      "cover": {
+        "src": "media/shop-cutouts/inf-135-cover-c057d3f77e57.webp",
+        "width": 626,
+        "height": 900
+      },
+      "statusPhotos": [
+        {
+          "src": "media/shop-cutouts/inf-135-01-a4876cbfa077.webp",
+          "width": 1183,
+          "height": 1700
+        },
+        {
+          "src": "media/shop-cutouts/inf-135-02-7c9c4379035c.webp",
+          "width": 1044,
+          "height": 1700
+        }
+      ]
+    },
+    {
+      "id": "INF-121",
+      "archiveName": "RATM longsleeve",
+      "archiveYear": 2026,
+      "materials": "100% Reclaimed Cotton",
+      "name": "RATM longsleeve",
+      "year": 2026,
+      "series": "Cuvée Semaine",
+      "detailMaterials": "100% Reclaimed Cotton",
+      "origin": "Naples",
+      "status": "Available",
+      "shop": null,
+      "src": "media/shop-cutouts/inf-121-cover-e99ea60d278a.webp",
+      "cover": {
+        "src": "media/shop-cutouts/inf-121-cover-e99ea60d278a.webp",
+        "width": 490,
+        "height": 900
+      },
+      "statusPhotos": [
+        {
+          "src": "media/shop-cutouts/inf-121-01-bb3088c2be92.webp",
+          "width": 926,
+          "height": 1700
+        },
+        {
+          "src": "media/shop-cutouts/inf-121-02-d792d0f2924a.webp",
+          "width": 919,
+          "height": 1700
+        }
+      ]
+    },
+    {
+      "id": "INF-125",
+      "archiveName": "DSQUSEL longsleeve",
+      "archiveYear": 2026,
+      "materials": "100% Reclaimed Cotton",
+      "name": "DSQUSEL longsleeve",
+      "year": 2026,
+      "series": "Cuvée Semaine",
+      "detailMaterials": "100% Reclaimed Cotton",
+      "origin": "Naples",
+      "status": "Available",
+      "shop": null,
+      "src": "media/shop-cutouts/inf-125-cover-3873b5adf582.webp",
+      "cover": {
+        "src": "media/shop-cutouts/inf-125-cover-3873b5adf582.webp",
+        "width": 564,
+        "height": 900
+      },
+      "statusPhotos": [
+        {
+          "src": "media/shop-cutouts/inf-125-01-85707c20a39e.webp",
+          "width": 1066,
+          "height": 1700
+        },
+        {
+          "src": "media/shop-cutouts/inf-125-02-725e43a47602.webp",
+          "width": 843,
+          "height": 1700
+        }
+      ]
+    },
+    {
+      "id": "INF-168",
+      "archiveName": "Infimalega Mayhem Boys",
+      "archiveYear": 2026,
+      "materials": "Denim, Aluminium & Paint",
+      "name": "Infimalega Mayhem Boys",
+      "year": 2026,
+      "series": "Unassigned",
+      "detailMaterials": "Denim, Aluminium & Paint",
+      "origin": "Naples",
+      "status": "Archived",
+      "shop": null,
+      "src": "media/shop-cutouts/inf-168-cover-f3ab04a9e787.webp",
+      "cover": {
+        "src": "media/shop-cutouts/inf-168-cover-f3ab04a9e787.webp",
+        "width": 767,
+        "height": 900
+      },
+      "statusPhotos": [
+        {
+          "src": "media/shop-cutouts/inf-168-01-f1f3477b87fb.webp",
+          "width": 1448,
+          "height": 1700
+        },
+        {
+          "src": "media/shop-cutouts/inf-168-02-70bf8306ef08.webp",
+          "width": 1450,
+          "height": 1685
+        }
+      ]
+    },
+    {
+      "id": "INF-126",
+      "archiveName": "90SBABY longsleeve",
+      "archiveYear": 2026,
+      "materials": "100% Reclaimed Cotton",
+      "name": "90SBABY longsleeve",
+      "year": 2026,
+      "series": "Cuvée Semaine",
+      "detailMaterials": "100% Reclaimed Cotton",
+      "origin": "Naples",
+      "status": "Available",
+      "shop": null,
+      "src": "media/shop-cutouts/inf-126-cover-b44d4d230019.webp",
+      "cover": {
+        "src": "media/shop-cutouts/inf-126-cover-b44d4d230019.webp",
+        "width": 553,
+        "height": 900
+      },
+      "statusPhotos": [
+        {
+          "src": "media/shop-cutouts/inf-126-01-487f3bd8ab00.webp",
+          "width": 1044,
+          "height": 1700
+        },
+        {
+          "src": "media/shop-cutouts/inf-126-02-bc7f8f61a4d1.webp",
+          "width": 1105,
+          "height": 1700
+        }
+      ]
+    },
+    {
+      "id": "INF-129",
+      "archiveName": "A long-longsleeve",
+      "archiveYear": 2026,
+      "materials": "100% Reclaimed Cotton",
+      "name": "A long-longsleeve",
+      "year": 2026,
+      "series": "Cuvée Semaine",
+      "detailMaterials": "100% Reclaimed Cotton",
+      "origin": "Naples",
+      "status": "Available",
+      "shop": null,
+      "src": "media/shop-cutouts/inf-129-cover-2ea2d62a7a4c.webp",
+      "cover": {
+        "src": "media/shop-cutouts/inf-129-cover-2ea2d62a7a4c.webp",
+        "width": 386,
+        "height": 900
+      },
+      "statusPhotos": [
+        {
+          "src": "media/shop-cutouts/inf-129-01-08672cf13d5b.webp",
+          "width": 729,
+          "height": 1700
+        },
+        {
+          "src": "media/shop-cutouts/inf-129-02-fc58b0a39e74.webp",
+          "width": 858,
+          "height": 1700
+        }
+      ]
+    },
     {
       "id": "INF-146",
       "archiveName": "Sleepy Shirt",
@@ -1249,44 +1435,6 @@
         },
         {
           "src": "media/shop-archive/inf-099-03-d48f9aca741e.webp",
-          "width": 1349,
-          "height": 1800
-        }
-      ]
-    },
-    {
-      "id": "INF-078",
-      "archiveName": "ragby! longsleeve",
-      "archiveYear": 2025,
-      "materials": "Cotton, Polyester, Paint",
-      "source": "https://www.infimalega.com/archive#h.wbbunw1k4l41",
-      "statusSource": "https://www.infimalega.com/inf-078",
-      "name": "ragby! longsleeve",
-      "year": 2025,
-      "series": "Amore Tossico",
-      "detailMaterials": "Reclaimed Cotton, Polyester & Paint",
-      "origin": "Naples",
-      "status": "Archived",
-      "shop": null,
-      "src": "media/shop-archive/inf-078-cover-b2e8baa0b15e.webp",
-      "cover": {
-        "src": "media/shop-archive/inf-078-cover-b2e8baa0b15e.webp",
-        "width": 693,
-        "height": 900
-      },
-      "statusPhotos": [
-        {
-          "src": "media/shop-archive/inf-078-01-1585785721b8.webp",
-          "width": 1349,
-          "height": 1800
-        },
-        {
-          "src": "media/shop-archive/inf-078-02-b383a3678c92.webp",
-          "width": 1349,
-          "height": 1800
-        },
-        {
-          "src": "media/shop-archive/inf-078-03-91951dc2f8fd.webp",
           "width": 1349,
           "height": 1800
         }

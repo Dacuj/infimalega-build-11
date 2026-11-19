@@ -166,8 +166,9 @@ def collection_film(anchor, asset, label, width, height):
         poster = asset + ".jpg"
     return f"""<figure id="{escape(anchor)}" class="collection-film" style="--film-ratio: {width} / {height}">
     <video autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" draggable="false" preload="auto" poster="{escape(poster)}" width="{width}" height="{height}" aria-label="{escape(label)}">
-      <source src="{escape(asset)}.mp4" type="video/mp4">
+      <source src="{escape(asset)}.mp4?v=audio-1" type="video/mp4">
     </video>
+    <button class="film-sound" type="button" aria-label="Audio del film" aria-pressed="false" hidden>Audio off</button>
   </figure>"""
 
 
@@ -303,8 +304,8 @@ for index, entry in enumerate(EDITORIAL):
         entry["title"],
         "editorial-page",
         editorial_page(entry, next_entry),
-        styles=("portfolio.css?v=plain", "editorial.css?v=swipe-3"),
-        script="portfolio.js?v=swipe-3",
+        styles=("portfolio.css?v=plain", "editorial.css?v=film-sound-1"),
+        script="portfolio.js?v=film-sound-1",
     )
 
 document("da-vicino.html", "Da vicino", "close-page", """
