@@ -189,7 +189,6 @@ function keepCollectionFilmPlaying(video, recoverSource, deferred = false) {
   const sound = video.parentElement.querySelector(".film-sound");
   if (sound) {
     function showSoundState() {
-      sound.textContent = video.muted ? "Audio off" : "Audio on";
       sound.setAttribute("aria-pressed", String(!video.muted));
     }
     sound.hidden = false;

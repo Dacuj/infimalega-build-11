@@ -374,14 +374,17 @@
   position: absolute;
   inset-inline-end: max(.75rem, env(safe-area-inset-right));
   inset-block-end: .75rem;
-  min-height: 44px;
-  padding: 0 .75em;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border: 1px solid #ffffff75;
   background: #090909d9;
   color: #fff;
-  font: 700 1.125rem/1 "Indice", "Arial Narrow", sans-serif;
-  text-transform: uppercase;
 }
+.film-sound[aria-pressed="true"] .sound-muted,
+.film-sound[aria-pressed="false"] .sound-audible { display: none; }
 .film-sound:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 @media (min-width: 48rem) and (hover: hover) {

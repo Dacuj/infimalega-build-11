@@ -144,6 +144,8 @@
 .shop-item-gallery > a {
   display: block;
   min-width: 0;
+  width: 50%;
+  justify-self: center;
   cursor: zoom-in;
 }
 

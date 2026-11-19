@@ -14,7 +14,7 @@ CUTOUT_MANIFEST = ROOT / "shop_cutouts.json"
 CUTOUTS = json.loads(CUTOUT_MANIFEST.read_text()) if CUTOUT_MANIFEST.is_file() else {}
 INSTAGRAM = "https://www.instagram.com/infimalega/"
 EMAIL = "mailto:infimalega@gmail.com"
-SHOP_STYLES = ("portfolio.css", "shop-archive.css?v=two-up")
+SHOP_STYLES = ("portfolio.css", "shop-archive.css?v=half-gallery")
 STATUS_LABELS = {"Available": "Disponibile", "Archived": "Archiviato"}
 MENU = [
     ("Collections", "index.html#collezioni", "collections"),
@@ -168,7 +168,13 @@ def collection_film(anchor, asset, label, width, height):
     <video autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" draggable="false" preload="auto" poster="{escape(poster)}" width="{width}" height="{height}" aria-label="{escape(label)}">
       <source src="{escape(asset)}.mp4?v=audio-1" type="video/mp4">
     </video>
-    <button class="film-sound" type="button" aria-label="Audio del film" aria-pressed="false" hidden>Audio off</button>
+    <button class="film-sound" type="button" aria-label="Audio del film" aria-pressed="false" hidden>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M3 9h4l5-4v14l-5-4H3z"/>
+        <path class="sound-muted" d="m16 9 5 6m0-6-5 6"/>
+        <path class="sound-audible" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+      </svg>
+    </button>
   </figure>"""
 
 
@@ -304,8 +310,8 @@ for index, entry in enumerate(EDITORIAL):
         entry["title"],
         "editorial-page",
         editorial_page(entry, next_entry),
-        styles=("portfolio.css?v=plain", "editorial.css?v=film-sound-1"),
-        script="portfolio.js?v=film-sound-1",
+        styles=("portfolio.css?v=plain", "editorial.css?v=film-sound-2"),
+        script="portfolio.js?v=film-sound-2",
     )
 
 document("da-vicino.html", "Da vicino", "close-page", """
