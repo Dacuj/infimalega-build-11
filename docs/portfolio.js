@@ -291,7 +291,18 @@ function runwayVariants() {
 
 const runwayMenu = document.querySelector("select.runway-menu");
 if (runwayMenu) {
-  runwayMenu.replaceChildren(...runwayVariants().map((variant) => new Option(variant)));
+  const link = runwayMenu.nextElementSibling;
+  const placeholder = new Option("Sfilata", "", true, true);
+  placeholder.disabled = true;
+  placeholder.hidden = true;
+  runwayMenu.replaceChildren(placeholder, ...runwayVariants().map((variant) => new Option(variant)));
+  runwayMenu.hidden = false;
+  link.hidden = true;
+  runwayMenu.addEventListener("change", () => {
+    if (!runwayMenu.value) return;
+    runwayMenu.selectedIndex = 0;
+    link.click();
+  });
 }
 
 function enableCollectionSwiping(viewer, currentImage, movePhoto) {

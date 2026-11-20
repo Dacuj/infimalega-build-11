@@ -15,6 +15,8 @@ CUTOUTS = json.loads(CUTOUT_MANIFEST.read_text()) if CUTOUT_MANIFEST.is_file() e
 INSTAGRAM = "https://www.instagram.com/infimalega/"
 EMAIL = "mailto:infimalega@gmail.com"
 SHOP_STYLES = ("portfolio.css", "shop-archive.css?v=half-gallery")
+ABOUT_STYLES = ("portfolio.css?v=mobile-balance", "about.css?v=manifesto")
+EDITORIAL_STYLES = ("portfolio.css?v=plain", "editorial.css?v=film-sound-2")
 STATUS_LABELS = {"Available": "Disponibile", "Archived": "Archiviato"}
 MENU = [
     ("Collections", "index.html#collezioni", "collections"),
@@ -144,9 +146,14 @@ document("about.html", "About", "about-document", f"""
               Fashion, underground culture
                     and visual identity.
 </pre>
+      <form class="about-commands" action="manifesto.html" method="get">
+        <input type="submit" value="EXE">
+        <input type="submit" value="SEMI">
+        <input type="submit" value="TDOOG">
+      </form>
     </div>
   </section>
-</main>""", styles=("portfolio.css?v=mobile-balance", "about.css?v=white-nav"), favicon="media/portfolio/croce.png", theme_color="#007100")
+</main>""", styles=ABOUT_STYLES, favicon="media/portfolio/croce.png", theme_color="#007100")
 
 PHOTO_VIEWER = """<dialog class="viewer" aria-labelledby="viewer-title">
   <div class="viewer-toolbar">
@@ -184,7 +191,7 @@ def editorial_grid(kind, frames):
         src = escape(frame["src"])
         alt = escape(frame["alt"])
         width, height = int(frame["width"]), int(frame["height"])
-        loading = "eager" if kind == "opening" and index == 0 else "lazy"
+        loading = "eager" if kind in ("opening", "runway") and index == 0 else "lazy"
         anchor = ' id="look-6"' if Path(frame["src"]).name == "amore-02.webp" else ""
         photos.append(f"""    <a href="{src}" data-photo{anchor}>
       <img draggable="false" src="{src}" alt="{alt}" width="{width}" height="{height}" loading="{loading}" decoding="async">
@@ -236,7 +243,7 @@ def editorial_copy(entry, position):
     return f'<div class="{class_name}" lang="en">\n{content}\n  </div>'
 
 
-def editorial_page(entry, next_entry):
+def editorial_page(entry, next_entry, runway_href):
     title = escape(entry["title"])
     slug = escape(entry["id"])
     heading = escape(COLLECTION_TITLES.get(entry["id"], entry["title"]))
@@ -257,19 +264,12 @@ def editorial_page(entry, next_entry):
             int(film["width"]), int(film["height"]),
         )
     runway = ""
-    if entry.get("runway"):
+    if runway_href:
         runway = f"""
-  <section class="editorial-runway" aria-labelledby="runway-label">
-    <label id="runway-label" class="visually-hidden" for="runway-title">Sfilata</label>
-    <select id="runway-title" class="runway-menu">
-      <option>Sfilata</option>
-      <option>sfiLaTA</option>
-      <option>SFILATA</option>
-      <option>SfiLAlta</option>
-      <option>sfILaTa</option>
-    </select>
-    {editorial_grid("runway", entry["runway"])}
-  </section>"""
+  <div class="editorial-runway">
+    <select class="runway-menu" aria-label="Sfilata. Scegli una voce per aprire la galleria." hidden></select>
+    <a class="editorial-back" href="{escape(runway_href)}">Sfilata</a>
+  </div>"""
 
     next_link = ""
     if next_entry:
@@ -303,16 +303,67 @@ def editorial_page(entry, next_entry):
 {PHOTO_VIEWER}"""
 
 
+def runway_page(entry):
+    title = escape(entry["title"])
+    heading = escape(COLLECTION_TITLES.get(entry["id"], entry["title"]))
+    return f"""
+{inner_header()}
+<main class="editorial" aria-labelledby="editorial-title">
+  <div class="editorial-heading">
+    <h1 id="editorial-title" class="editorial-title">{heading}</h1>
+    <p class="editorial-year">Sfilata</p>
+  </div>
+  <div data-gallery aria-label="{title}, sfilata">
+    {editorial_grid("runway", entry["runway"])}
+  </div>
+</main>
+{PHOTO_VIEWER}"""
+
+
 for index, entry in enumerate(EDITORIAL):
     next_entry = EDITORIAL[index + 1] if index + 1 < len(EDITORIAL) else None
+    runway_href = entry["id"] + "-sfilata.html" if entry.get("runway") else ""
     document(
         entry["id"] + ".html",
         entry["title"],
         "editorial-page",
-        editorial_page(entry, next_entry),
-        styles=("portfolio.css?v=plain", "editorial.css?v=film-sound-2"),
-        script="portfolio.js?v=film-sound-2",
+        editorial_page(entry, next_entry, runway_href),
+        styles=EDITORIAL_STYLES,
+        script="portfolio.js?v=runway-page" if runway_href else "portfolio.js?v=film-sound-2",
     )
+    if runway_href:
+        document(
+            runway_href,
+            entry["title"] + " · Sfilata",
+            "editorial-page",
+            runway_page(entry),
+            styles=EDITORIAL_STYLES,
+            script="portfolio.js?v=runway-page",
+        )
+
+
+manifesto = "\n".join(
+    "      <p>" + "<br>\n".join(escape(line) for line in paragraph.splitlines()) + "</p>"
+    for paragraph in (ROOT / "manifesto.txt").read_text(encoding="utf-8").strip().split("\n\n")
+)
+document(
+    "manifesto.html",
+    "Manifesto",
+    "about-document",
+    f"""
+{inner_header()}
+<main class="about-page">
+  <section class="about-frame" tabindex="0" aria-labelledby="manifesto-title">
+    <div class="manifesto-sheet">
+      <h1 id="manifesto-title">MANIFESTO</h1>
+{manifesto}
+    </div>
+  </section>
+</main>""",
+    styles=ABOUT_STYLES,
+    favicon="media/portfolio/croce.png",
+    theme_color="#007100",
+)
 
 document("da-vicino.html", "Da vicino", "close-page", """
 <a class="site-mark" href="index.html#film" aria-label="Infimalega, torna alla pagina iniziale">

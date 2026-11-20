@@ -61,6 +61,39 @@
   font: inherit;
 }
 
+.about-commands {
+  display: flex;
+  justify-content: center;
+  gap: .8rem;
+  inline-size: 100cqw;
+  margin-block-start: 1.1rem;
+}
+
+.manifesto-sheet {
+  padding: clamp(1rem, 5cqw, 2.5rem);
+  font-size: clamp(.875rem, 2.2cqw, 1.15rem);
+  line-height: 1.4;
+}
+
+.manifesto-sheet h1 {
+  width: fit-content;
+  margin-block-end: 1.4em;
+  padding-inline: .18em;
+  background: #00ff00;
+  color: #000;
+  font-size: clamp(1.3rem, 5.4cqw, 2.6rem);
+  line-height: 1;
+}
+
+.manifesto-sheet p {
+  max-inline-size: 63ch;
+  margin-block-end: 2em;
+  overflow-wrap: anywhere;
+}
+
+.manifesto-sheet p:nth-of-type(2n) { margin-inline-start: min(8cqw, 4rem); }
+.manifesto-sheet p:last-child { margin-block-end: 0; }
+
 @media (max-width: 60rem) {
   .about-page {
     background: repeating-linear-gradient(to bottom,
