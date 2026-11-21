@@ -15,7 +15,7 @@ CUTOUTS = json.loads(CUTOUT_MANIFEST.read_text()) if CUTOUT_MANIFEST.is_file() e
 INSTAGRAM = "https://www.instagram.com/infimalega/"
 EMAIL = "mailto:infimalega@gmail.com"
 SHOP_STYLES = ("portfolio.css", "shop-archive.css?v=half-gallery")
-ABOUT_STYLES = ("portfolio.css?v=mobile-balance", "about.css?v=manifesto")
+ABOUT_STYLES = ("portfolio.css?v=mobile-balance", "about.css?v=monochrome")
 EDITORIAL_STYLES = ("portfolio.css?v=plain", "editorial.css?v=film-sound-2")
 STATUS_LABELS = {"Available": "Disponibile", "Archived": "Archiviato"}
 MENU = [
@@ -153,7 +153,7 @@ document("about.html", "About", "about-document", f"""
       </form>
     </div>
   </section>
-</main>""", styles=ABOUT_STYLES, favicon="media/portfolio/croce.png", theme_color="#007100")
+</main>""", styles=ABOUT_STYLES, favicon="media/portfolio/croce.png")
 
 PHOTO_VIEWER = """<dialog class="viewer" aria-labelledby="viewer-title">
   <div class="viewer-toolbar">
@@ -277,6 +277,18 @@ def editorial_page(entry, next_entry, runway_href):
         next_href = escape(next_entry["id"]) + ".html"
         next_link = f'\n  <a class="editorial-next" href="{next_href}">{next_title} <span aria-hidden="true">→</span></a>'
 
+    if entry.get("photoGroups"):
+        gallery = "\n  ".join(
+            editorial_grid("opening" if index == 0 else "sequence", group)
+            for index, group in enumerate(entry["photoGroups"])
+        )
+    else:
+        gallery = f"""{editorial_grid("opening", entry["opening"])}
+  {editorial_copy(entry, "intro")}
+  {editorial_grid("sequence", entry["sequence"])}
+  {editorial_copy(entry, "end")}
+  {editorial_grid("ending", entry["ending"])}"""
+
     nav = inner_header()
     opening = f"\n  {opening_film}\n{nav}" if opening_film else ""
     return f"""
@@ -287,11 +299,7 @@ def editorial_page(entry, next_entry, runway_href):
     <h1 id="editorial-title" class="editorial-title">{heading}</h1>{year}
   </div>
   <div role="group" data-gallery aria-label="{title}">
-  {editorial_grid("opening", entry["opening"])}
-  {editorial_copy(entry, "intro")}
-  {editorial_grid("sequence", entry["sequence"])}
-  {editorial_copy(entry, "end")}
-  {editorial_grid("ending", entry["ending"])}{runway}
+  {gallery}{runway}
   </div>{lookbook}
   <div class="editorial-archive-callout">
     <a href="shop.html">Vai all’archivio</a>
@@ -362,7 +370,6 @@ document(
 </main>""",
     styles=ABOUT_STYLES,
     favicon="media/portfolio/croce.png",
-    theme_color="#007100",
 )
 
 document("da-vicino.html", "Da vicino", "close-page", """
