@@ -15,7 +15,7 @@
     { href: "insecto.html", image: "insecto-02.webp", title: "Insecto, upside-down portrait", ratio: 907/1360, size: .115, x: 0, y: 0.78 },
     { href: "amore-tossico.html", image: "runway-01.webp", title: "Amore Tossico, view of the runway show", ratio: 1.5, size: .185, x: 0.35, y: -0.66 },
     { href: "amore-tossico.html", image: "amore-02.webp", title: "Amore Tossico, framed portrait", ratio: .8, size: .10, x: -0.62, y: -0.67 },
-    { href: "ammassimiliano.html", folder: massimiliano, image: "presentation-landing-threshold.png", film: "presentation-landing-threshold.mp4", title: "A Massimiliano, presentation film", ratio: 4/3, size: .145, x: 0.34, y: 0.045 },
+    { href: "ammassimiliano.html", folder: massimiliano, image: "che-cose-infimalega-landing-threshold.png", film: "che-cose-infimalega-landing-threshold.mp4", title: "A Massimiliano, presentation film", ratio: 4/3, size: .145, x: 0.34, y: 0.045 },
     { href: "ammassimiliano.html", folder: massimiliano, image: "pica-9.webp", title: "A Massimiliano, portrait of Pica", ratio: .8, size: .10, x: -0.40, y: 0.025 },
     { href: "ammassimiliano.html", folder: massimiliano, image: "rubina-10.webp", title: "A Massimiliano, portrait of Rubina", ratio: .8, size: .11, x: -0.41, y: 0.67 },
   ];
