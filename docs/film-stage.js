@@ -3,6 +3,7 @@
   if (!stage) return;
 
   const folder = "media/portfolio/";
+  const massimiliano = "media/ammassimiliano/";
   const frames = [
     { href: "street-study.html", image: "street-01.webp", title: "Street Study, il gruppo sulla scalinata", ratio: 1.5, size: .17, x: -0.32, y: -0.29 },
     { href: "amore-tossico.html", image: "amore-03.webp", title: "Amore Tossico, ritratto", ratio: .8, size: .093, x: -0.17, y: -0.1 },
@@ -14,6 +15,9 @@
     { href: "insecto.html", image: "insecto-02.webp", title: "Insecto, ritratto capovolto", ratio: 907/1360, size: .115, x: 0, y: 0.78 },
     { href: "amore-tossico.html", image: "runway-01.webp", title: "Amore Tossico, veduta della sfilata", ratio: 1.5, size: .185, x: 0.35, y: -0.66 },
     { href: "amore-tossico.html", image: "amore-02.webp", title: "Amore Tossico, ritratto nella cornice", ratio: .8, size: .10, x: -0.62, y: -0.67 },
+    { href: "ammassimiliano.html", folder: massimiliano, image: "presentation-landing-threshold.png", film: "presentation-landing-threshold.mp4", title: "A Massimiliano, film di presentazione", ratio: 4/3, size: .145, x: 0.34, y: 0.045 },
+    { href: "ammassimiliano.html", folder: massimiliano, image: "pica-9.webp", title: "A Massimiliano, ritratto di Pica", ratio: .8, size: .10, x: -0.40, y: 0.025 },
+    { href: "ammassimiliano.html", folder: massimiliano, image: "rubina-10.webp", title: "A Massimiliano, ritratto di Rubina", ratio: .8, size: .11, x: -0.41, y: 0.67 },
   ];
 
   const thermal = document.getElementById("thermal-film");
@@ -268,6 +272,7 @@
     link.draggable = false;
     link.tabIndex = -1;
     link.setAttribute("aria-label", frame.title + ". Apri la collezione");
+    const mediaFolder = frame.folder ?? folder;
     let media;
     if (frame.film) {
       link.classList.add("stage-film-tile");
@@ -279,15 +284,15 @@
       media.preload = "none";
       media.disablePictureInPicture = true;
       media.disableRemotePlayback = true;
-      media.poster = folder + frame.image;
-      media.src = folder + frame.film;
+      media.poster = mediaFolder + frame.image;
+      media.src = mediaFolder + frame.film;
       media.setAttribute("aria-label", frame.title);
     } else {
       media = new Image();
       media.alt = frame.title;
       media.decoding = "async";
       media.draggable = false;
-      media.src = folder + frame.image;
+      media.src = mediaFolder + frame.image;
     }
     link.append(media);
     field.append(link);

@@ -116,6 +116,9 @@ document("serie.html", "Serie", "series", f"""
 
 
 EDITORIAL_BACK = '<a class="editorial-back" href="index.html#collezioni"><span aria-hidden="true">←</span> Collezioni</a>'
+EDITORIAL_ARCHIVE = """<div class="editorial-archive-callout">
+    <a href="shop.html">Vai all’archivio</a>
+  </div>"""
 
 document("about.html", "About", "about-document", f"""
 {inner_header("about")}
@@ -266,7 +269,7 @@ def editorial_page(entry, next_entry, runway_href):
     runway = ""
     if runway_href:
         runway = f"""
-  <div class="editorial-runway">
+  <div class="editorial-runway" id="sfilata">
     <select class="runway-menu" aria-label="Sfilata. Scegli una voce per aprire la galleria." hidden></select>
     <a class="editorial-back" href="{escape(runway_href)}">Sfilata</a>
   </div>"""
@@ -276,18 +279,6 @@ def editorial_page(entry, next_entry, runway_href):
         next_title = escape(next_entry["title"])
         next_href = escape(next_entry["id"]) + ".html"
         next_link = f'\n  <a class="editorial-next" href="{next_href}">{next_title} <span aria-hidden="true">→</span></a>'
-
-    if entry.get("photoGroups"):
-        gallery = "\n  ".join(
-            editorial_grid("opening" if index == 0 else "sequence", group)
-            for index, group in enumerate(entry["photoGroups"])
-        )
-    else:
-        gallery = f"""{editorial_grid("opening", entry["opening"])}
-  {editorial_copy(entry, "intro")}
-  {editorial_grid("sequence", entry["sequence"])}
-  {editorial_copy(entry, "end")}
-  {editorial_grid("ending", entry["ending"])}"""
 
     nav = inner_header()
     opening = f"\n  {opening_film}\n{nav}" if opening_film else ""
@@ -299,11 +290,13 @@ def editorial_page(entry, next_entry, runway_href):
     <h1 id="editorial-title" class="editorial-title">{heading}</h1>{year}
   </div>
   <div role="group" data-gallery aria-label="{title}">
-  {gallery}{runway}
+  {editorial_grid("opening", entry["opening"])}
+  {editorial_copy(entry, "intro")}
+  {editorial_grid("sequence", entry["sequence"])}
+  {editorial_copy(entry, "end")}
+  {editorial_grid("ending", entry["ending"])}{runway}
   </div>{lookbook}
-  <div class="editorial-archive-callout">
-    <a href="shop.html">Vai all’archivio</a>
-  </div>
+  {EDITORIAL_ARCHIVE}
 </main>
 <footer class="editorial-footer">
   {EDITORIAL_BACK}{next_link}
@@ -314,6 +307,7 @@ def editorial_page(entry, next_entry, runway_href):
 def runway_page(entry):
     title = escape(entry["title"])
     heading = escape(COLLECTION_TITLES.get(entry["id"], entry["title"]))
+    collection_href = escape(entry["id"]) + ".html#sfilata"
     return f"""
 {inner_header()}
 <main class="editorial" aria-labelledby="editorial-title">
@@ -324,7 +318,12 @@ def runway_page(entry):
   <div data-gallery aria-label="{title}, sfilata">
     {editorial_grid("runway", entry["runway"])}
   </div>
+  {EDITORIAL_ARCHIVE}
 </main>
+<footer class="editorial-footer">
+  <a class="editorial-back" href="{collection_href}"><span aria-hidden="true">←</span> {title}</a>
+  <a class="editorial-next" href="index.html#collezioni">Collezioni <span aria-hidden="true">→</span></a>
+</footer>
 {PHOTO_VIEWER}"""
 
 

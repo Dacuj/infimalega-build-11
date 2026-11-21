@@ -650,127 +650,127 @@
   {
     "id": "ammassimiliano",
     "title": "A Massimiliano",
-    "photoGroups": [
-      [
-        {
-          "src": "media/ammassimiliano/pica-8.webp",
-          "alt": "Pica, scatto 8",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/pica-5.webp",
-          "alt": "Pica, scatto 5",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/pica.webp",
-          "alt": "Pica",
-          "width": 1600,
-          "height": 2000
-        }
-      ],
-      [
-        {
-          "src": "media/ammassimiliano/brando-8.webp",
-          "alt": "Brando, scatto 8",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/brando-6.webp",
-          "alt": "Brando, scatto 6",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/brando-3.webp",
-          "alt": "Brando, scatto 3",
-          "width": 1600,
-          "height": 2000
-        }
-      ],
-      [
-        {
-          "src": "media/ammassimiliano/ars-9.webp",
-          "alt": "Ars, scatto 9",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/ars.webp",
-          "alt": "Ars",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/ars-7.webp",
-          "alt": "Ars, scatto 7",
-          "width": 1600,
-          "height": 2000
-        }
-      ],
-      [
-        {
-          "src": "media/ammassimiliano/rubina-4.webp",
-          "alt": "Rubina, scatto 4",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/rubina-7.webp",
-          "alt": "Rubina, scatto 7",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/rubina-5.webp",
-          "alt": "Rubina, scatto 5",
-          "width": 1600,
-          "height": 2000
-        }
-      ],
-      [
-        {
-          "src": "media/ammassimiliano/antonio.webp",
-          "alt": "Antonio",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/antonio-3.webp",
-          "alt": "Antonio, scatto 3",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/antonio-6.webp",
-          "alt": "Antonio, scatto 6",
-          "width": 1600,
-          "height": 2000
-        }
-      ],
-      [
-        {
-          "src": "media/ammassimiliano/sis-9.webp",
-          "alt": "Sis, scatto 9",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/sis-7.webp",
-          "alt": "Sis, scatto 7",
-          "width": 1600,
-          "height": 2000
-        },
-        {
-          "src": "media/ammassimiliano/sis-5.webp",
-          "alt": "Sis, scatto 5",
-          "width": 1600,
-          "height": 2000
-        }
-      ]
-    ]
+    "year": 2026,
+    "opening": [
+      {
+        "src": "media/ammassimiliano/pica-9.webp",
+        "alt": "Pica, scatto 9",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "media/ammassimiliano/brando-7.webp",
+        "alt": "Brando, scatto 7",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "media/ammassimiliano/sis-2.webp",
+        "alt": "Sis, scatto 2",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "sequence": [
+      {
+        "src": "media/ammassimiliano/rubina-2.webp",
+        "alt": "Rubina, scatto 2",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "media/ammassimiliano/antonio-2.webp",
+        "alt": "Antonio, scatto 2",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "media/ammassimiliano/ars-3.webp",
+        "alt": "Ars, scatto 3",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "ending": [
+      {
+        "src": "media/ammassimiliano/brando.webp",
+        "alt": "Brando",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "media/ammassimiliano/rubina-10.webp",
+        "alt": "Rubina, scatto 10",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "media/ammassimiliano/ars-8.webp",
+        "alt": "Ars, scatto 8",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "src": "media/ammassimiliano/sis-8.webp",
+        "alt": "Sis, scatto 8",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "lookbook": [
+      {
+        "description": "Pica",
+        "photos": [
+          "media/ammassimiliano/pica-8.webp",
+          "media/ammassimiliano/pica-5.webp",
+          "media/ammassimiliano/pica.webp"
+        ]
+      },
+      {
+        "description": "Brando",
+        "photos": [
+          "media/ammassimiliano/brando-8.webp",
+          "media/ammassimiliano/brando-6.webp",
+          "media/ammassimiliano/brando-3.webp"
+        ]
+      },
+      {
+        "description": "Ars",
+        "photos": [
+          "media/ammassimiliano/ars-9.webp",
+          "media/ammassimiliano/ars.webp",
+          "media/ammassimiliano/ars-7.webp"
+        ]
+      },
+      {
+        "description": "Rubina",
+        "photos": [
+          "media/ammassimiliano/rubina-4.webp",
+          "media/ammassimiliano/rubina-7.webp",
+          "media/ammassimiliano/rubina-5.webp"
+        ]
+      },
+      {
+        "description": "Antonio",
+        "photos": [
+          "media/ammassimiliano/antonio.webp",
+          "media/ammassimiliano/antonio-3.webp",
+          "media/ammassimiliano/antonio-6.webp"
+        ]
+      },
+      {
+        "description": "Sis",
+        "photos": [
+          "media/ammassimiliano/sis-9.webp",
+          "media/ammassimiliano/sis-7.webp",
+          "media/ammassimiliano/sis-5.webp"
+        ]
+      }
+    ],
+    "film": {
+      "asset": "media/ammassimiliano/presentation",
+      "width": 960,
+      "height": 720
+    }
   }
 ]
