@@ -1,228 +1,5 @@
 [
   {
-    "id": "amore-tossico",
-    "title": "Amore Tossico",
-    "year": 2026,
-    "copy": {
-      "intro": [
-        "Amore Tossico examines proximity without lineage.",
-        "Off-white cotton, intentionally stained and structurally stressed, defines the surface language of the capsule. Irregular puffed sleeves alter proportion while arms remain consistently covered, limiting exposure and gesture."
-      ],
-      "end": [
-        "The garments operate as uniform fragments assembled into a non-biological family.",
-        "Each piece exists as a singular 1/1 archive unit."
-      ]
-    },
-    "opening": [
-      {
-        "src": "media/portfolio/amore-01.webp",
-        "alt": "Il gruppo di Amore Tossico fra le tende rosse",
-        "width": 1440,
-        "height": 1800
-      },
-      {
-        "src": "media/portfolio/amore-02.webp",
-        "alt": "Figura mascherata che regge una cornice dorata",
-        "width": 1088,
-        "height": 1360
-      },
-      {
-        "src": "media/portfolio/amore-03.webp",
-        "alt": "Ritratto con trucco rosso e bocca aperta",
-        "width": 1088,
-        "height": 1360
-      }
-    ],
-    "sequence": [
-      {
-        "src": "media/amore-tossico-10.webp",
-        "alt": "Figura in bianco con le braccia aperte sul palco",
-        "width": 1200,
-        "height": 1499
-      },
-      {
-        "src": "media/amore-tossico-06.webp",
-        "alt": "Ritratto con ombretto azzurro e camicia bianca dalle maniche ampie",
-        "width": 1200,
-        "height": 1500
-      },
-      {
-        "src": "media/amore-tossico-03.webp",
-        "alt": "Figura accovacciata in pantaloni blu sul bordo del palco",
-        "width": 1200,
-        "height": 1500
-      },
-      {
-        "src": "media/amore-tossico-04.webp",
-        "alt": "Figura vestita di bianco in piedi su una sedia fra i tendaggi",
-        "width": 1200,
-        "height": 1499
-      },
-      {
-        "src": "media/amore-tossico-07.webp",
-        "alt": "Figura in verde davanti a un tamburo fra le tende rosse",
-        "width": 1200,
-        "height": 1500
-      }
-    ],
-    "ending": [
-      {
-        "src": "media/amore-tossico-08.webp",
-        "alt": "Primo piano del batterista in verde con la bocca aperta",
-        "width": 1200,
-        "height": 1500
-      },
-      {
-        "src": "media/editorial/amore-10.webp",
-        "alt": "Ritratto in bianco e nero di una figura che solleva la mano davanti al volto",
-        "width": 1152,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/amore-11.webp",
-        "alt": "Figura in blu in posa con un piede su uno sgabello fra le tende",
-        "width": 1152,
-        "height": 1440
-      },
-      {
-        "src": "media/amore-tossico-16.webp",
-        "alt": "Figura mascherata che solleva una cornice dorata sul palco",
-        "width": 1200,
-        "height": 1499
-      },
-      {
-        "src": "media/amore-tossico-15.webp",
-        "alt": "Figura in cappotto scuro vista di profilo fra i tendaggi",
-        "width": 1200,
-        "height": 1500
-      }
-    ],
-    "runway": [
-      {
-        "src": "media/portfolio/runway-01.webp",
-        "alt": "Veduta della sala durante la sfilata Amore Tossico",
-        "width": 1800,
-        "height": 1200
-      },
-      {
-        "src": "media/portfolio/runway-02.webp",
-        "alt": "Ritratto di un look della sfilata Amore Tossico",
-        "width": 1360,
-        "height": 907
-      },
-      {
-        "src": "media/portfolio/runway-extra-01.webp",
-        "alt": "Insegna Infimalega sopra l’ingresso della sfilata",
-        "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/portfolio/runway-extra-02.webp",
-        "alt": "Look con copricapo nero e pantaloni blu davanti al pubblico",
-        "width": 1440,
-        "height": 961
-      },
-      {
-        "src": "media/portfolio/runway-extra-03.webp",
-        "alt": "Look a strati con tessuto chiaro drappeggiato e maniche rosse",
-        "width": 1440,
-        "height": 961
-      },
-      {
-        "src": "media/portfolio/runway-extra-04.webp",
-        "alt": "Ritratto con copricapo scuro e camicia bianca accanto a una tenda rossa",
-        "width": 1440,
-        "height": 960
-      },
-      {
-        "src": "media/portfolio/runway-extra-05.webp",
-        "alt": "Look con viso coperto, top corto e pantaloni bicolore",
-        "width": 1440,
-        "height": 960
-      },
-      {
-        "src": "media/portfolio/runway-extra-06.webp",
-        "alt": "Completo verde menta indossato davanti al pubblico",
-        "width": 1440,
-        "height": 960
-      },
-      {
-        "src": "media/portfolio/runway-extra-07.webp",
-        "alt": "Figura in cappotto nero seduta sul divano",
-        "width": 1440,
-        "height": 960
-      },
-      {
-        "src": "media/portfolio/runway-extra-08.webp",
-        "alt": "Figura con maglia a stampa fotografica e giacca aperta tra gli ospiti",
-        "width": 1440,
-        "height": 960
-      },
-      {
-        "src": "media/portfolio/runway-extra-09.webp",
-        "alt": "Figura mascherata con cartello a scritte rosse davanti al pubblico",
-        "width": 1440,
-        "height": 960
-      },
-      {
-        "src": "media/portfolio/runway-extra-10.webp",
-        "alt": "Etichette e capi Infimalega disposti su un tavolo a quadri rossi",
-        "width": 1440,
-        "height": 960
-      }
-    ],
-    "lookbook": [
-      {
-        "description": "Abito avorio con pizzo e cintura",
-        "photos": [
-          "media/amore-tossico-10.webp",
-          "media/amore-tossico-11.webp",
-          "media/amore-tossico-12.webp"
-        ]
-      },
-      {
-        "description": "Berretto e pantaloni blu",
-        "photos": [
-          "media/amore-tossico-01.webp",
-          "media/amore-tossico-03.webp",
-          "media/amore-tossico-02.webp"
-        ]
-      },
-      {
-        "description": "Camicia bianca con maniche ampie e ombretto azzurro",
-        "photos": [
-          "media/amore-tossico-05.webp",
-          "media/amore-tossico-04.webp",
-          "media/amore-tossico-06.webp"
-        ]
-      },
-      {
-        "description": "Maglia verde del batterista",
-        "photos": [
-          "media/amore-tossico-07.webp",
-          "media/amore-tossico-09.webp",
-          "media/amore-tossico-08.webp"
-        ]
-      },
-      {
-        "description": "Giacca grigia e dolcevita verde",
-        "photos": [
-          "media/amore-tossico-15.webp",
-          "media/amore-tossico-13.webp",
-          "media/amore-tossico-14.webp"
-        ]
-      },
-      {
-        "description": "Figura mascherata tra i tendaggi",
-        "photos": [
-          "media/amore-tossico-16.webp",
-          "media/amore-tossico-17.webp",
-          "media/amore-tossico-18.webp"
-        ]
-      }
-    ]
-  },
-  {
     "id": "cuvee-semaine",
     "title": "Cuvée Semaine",
     "film": {
@@ -233,19 +10,19 @@
     "opening": [
       {
         "src": "media/portfolio/cuvee-01.webp",
-        "alt": "Figura con berretto e maniche rosse",
+        "alt": "Figure in a cap with red sleeves",
         "width": 1350,
         "height": 1800
       },
       {
         "src": "media/portfolio/cuvee-02.webp",
-        "alt": "Retro del capo con stampa grafica",
+        "alt": "Back of the garment with a graphic print",
         "width": 1020,
         "height": 1360
       },
       {
         "src": "media/portfolio/cuvee-03.webp",
-        "alt": "Stampa multicolore con volto cancellato nella fotografia",
+        "alt": "Multicoloured print on a figure with an obscured face",
         "width": 1020,
         "height": 1360
       }
@@ -253,31 +30,19 @@
     "sequence": [
       {
         "src": "media/editorial/cuvee-04.webp",
-        "alt": "Mezzo busto di una figura bionda con maglia nera e numero 83 rosso",
+        "alt": "Portrait of a blond figure in a black shirt with a red 83",
         "width": 1600,
         "height": 1067
       },
       {
         "src": "media/editorial/cuvee-05.webp",
-        "alt": "Figura a gambe divaricate con maglia nera numero 83",
+        "alt": "Figure standing with legs apart in a black number 83 shirt",
         "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/cuvee-06.webp",
-        "alt": "Figura con maglia bianca ampia e berretto blu davanti a teli appesi",
-        "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/cuvee-07.webp",
-        "alt": "Retro della maglia bianca con guanti rossi incrociati dietro la schiena",
-        "width": 1080,
         "height": 1440
       },
       {
         "src": "media/editorial/cuvee-08.webp",
-        "alt": "Ritratto con occhiali scuri e maglia beige a righe",
+        "alt": "Portrait with dark glasses and a beige striped shirt",
         "width": 1080,
         "height": 1440
       }
@@ -285,32 +50,32 @@
     "ending": [
       {
         "src": "media/editorial/cuvee-09.webp",
-        "alt": "Ritratto frontale con berretto nero inclinato e scritta rossa sulla maglia",
+        "alt": "Frontal portrait with a tilted black cap and red lettering on the shirt",
         "width": 1080,
         "height": 1440
       },
       {
         "src": "media/editorial/cuvee-10.webp",
-        "alt": "Retro della maglia nera con scritta rossa e grigia sulle spalle",
+        "alt": "Back of the black shirt with red and grey lettering across the shoulders",
         "width": 1080,
         "height": 1440
       },
       {
         "src": "media/editorial/cuvee-11.webp",
-        "alt": "Capo nero visto da dietro con un ritratto stampato al centro",
+        "alt": "Back of a black garment with a portrait printed in the centre",
         "width": 960,
         "height": 1440
       },
       {
         "src": "media/editorial/cuvee-12.webp",
-        "alt": "Figura a capo chino con maniche rosse e maglia stampata",
+        "alt": "Figure with head bowed, wearing red sleeves and a printed shirt",
         "width": 1080,
         "height": 1440
       }
     ],
     "lookbook": [
       {
-        "description": "Maglia 83",
+        "description": "Number 83 shirt",
         "photos": [
           "media/editorial/cuvee-05.webp",
           "media/editorial/cuvee-04.webp",
@@ -318,7 +83,7 @@
         ]
       },
       {
-        "description": "Maglia nera con stampa e polsi rossi",
+        "description": "Black graphic shirt with red cuffs",
         "photos": [
           "media/lookbook/cuvee-5859.webp",
           "media/portfolio/cuvee-02.webp",
@@ -326,15 +91,7 @@
         ]
       },
       {
-        "description": "Maglia bianca ampia e pantaloni blu",
-        "photos": [
-          "media/lookbook/cuvee-5871.webp",
-          "media/editorial/cuvee-06.webp",
-          "media/editorial/cuvee-07.webp"
-        ]
-      },
-      {
-        "description": "Maglia nera Diesel e polsi blu",
+        "description": "Black DSQUSEL shirt and blue cuffs",
         "photos": [
           "media/editorial/cuvee-10.webp",
           "media/editorial/cuvee-09.webp",
@@ -342,7 +99,7 @@
         ]
       },
       {
-        "description": "Maglia 90’s Baby con stampa sul retro",
+        "description": "90’s Baby shirt with a back print",
         "photos": [
           "media/lookbook/cuvee-5924.webp",
           "media/editorial/cuvee-11.webp",
@@ -350,7 +107,7 @@
         ]
       },
       {
-        "description": "Berretto e top con grafica rossa e nera",
+        "description": "Cap and top with red and black graphics",
         "photos": [
           "media/portfolio/cuvee-01.webp",
           "media/editorial/cuvee-12.webp",
@@ -358,294 +115,22 @@
         ]
       },
       {
-        "description": "Volto coperto e maglia con stampa multicolore",
+        "description": "Covered face and multicoloured graphic shirt",
         "photos": [
           "media/lookbook/cuvee-5977.webp",
           "media/lookbook/cuvee-5985.webp",
           "media/portfolio/cuvee-03.webp"
         ]
       }
-    ]
-  },
-  {
-    "id": "street-study",
-    "title": "Street Study",
+    ],
     "copy": {
       "intro": [
-        "Street Study. Romantic punk in the urban land.",
-        "It refers in particular to a series of colors, clothes and shapes typical of the 80s, with makeup referring to some cult films of those years. Specifically to romantic punk and new wave, all of which are revisited by Infimalega."
+        "Cuvée Semaine brings together reworked tops, bold graphics and layered silhouettes."
       ],
       "end": [
-        "Each piece exists as a singular 1/1 archive unit."
+        "Front and back views show how prints, sleeves and panels come together in each piece."
       ]
-    },
-    "opening": [
-      {
-        "src": "media/portfolio/street-01.webp",
-        "alt": "Ritratto di gruppo in bianco e nero su una scalinata",
-        "width": 1800,
-        "height": 1200
-      },
-      {
-        "src": "media/portfolio/street-02.webp",
-        "alt": "Primo piano con trucco acceso intorno agli occhi",
-        "width": 1088,
-        "height": 1360
-      },
-      {
-        "src": "media/portfolio/street-03.webp",
-        "alt": "Look a figura intera contro uno sfondo rosso",
-        "width": 1088,
-        "height": 1360
-      }
-    ],
-    "sequence": [
-      {
-        "src": "media/editorial/street-04.webp",
-        "alt": "Due figure affiancate in bianco e nero contro un muro con graffiti",
-        "width": 1152,
-        "height": 1440
-      },
-      {
-        "src": "media/street-study-01.webp",
-        "alt": "Figura con giacca grigia e chiavi appuntate davanti a teli stesi",
-        "width": 1200,
-        "height": 1500
-      },
-      {
-        "src": "media/street-study-03.webp",
-        "alt": "Primo piano frontale con rossetto rosso sbavato",
-        "width": 1200,
-        "height": 1500
-      },
-      {
-        "src": "media/street-study-02.webp",
-        "alt": "Dettaglio della giacca grigia con chiavi e catenelle appuntate",
-        "width": 1200,
-        "height": 1500
-      },
-      {
-        "src": "media/street-study-16.webp",
-        "alt": "Figura in azzurro con calze a righe fra i panni stesi",
-        "width": 1200,
-        "height": 1500
-      }
-    ],
-    "ending": [
-      {
-        "src": "media/street-study-15.webp",
-        "alt": "Ritratto con trucco scuro e fasce bianche incrociate sul busto",
-        "width": 1200,
-        "height": 1499
-      },
-      {
-        "src": "media/street-study-07.webp",
-        "alt": "Figura con giacca mimetica e gonna a quadri davanti a un telo",
-        "width": 1200,
-        "height": 1500
-      },
-      {
-        "src": "media/street-study-09.webp",
-        "alt": "Primo piano con cappuccio bianco e trucco verde sugli occhi",
-        "width": 1200,
-        "height": 1500
-      },
-      {
-        "src": "media/editorial/street-12.webp",
-        "alt": "Dettaglio della maglia a maniche rosse con stampa Family Is Family",
-        "width": 1152,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/street-13.webp",
-        "alt": "Calze rosse, scarpe a righe e borsa bianca accanto a una gonna a quadri",
-        "width": 1152,
-        "height": 1440
-      }
-    ],
-    "lookbook": [
-      {
-        "description": "Giacca grigia con chiavi",
-        "photos": [
-          "media/street-study-01.webp",
-          "media/street-study-02.webp",
-          "media/street-study-03.webp"
-        ]
-      },
-      {
-        "description": "Gonna tartan e calze rosse",
-        "photos": [
-          "media/street-study-04.webp",
-          "media/street-study-05.webp",
-          "media/street-study-06.webp"
-        ]
-      },
-      {
-        "description": "Giacca mimetica e cappuccio grigio",
-        "photos": [
-          "media/street-study-07.webp",
-          "media/street-study-08.webp",
-          "media/street-study-09.webp"
-        ]
-      },
-      {
-        "description": "Maniche rosse e copricapo in denim",
-        "photos": [
-          "media/street-study-10.webp",
-          "media/street-study-11.webp",
-          "media/street-study-12.webp"
-        ]
-      },
-      {
-        "description": "Pannelli bianchi e scarpe rosse",
-        "photos": [
-          "media/street-study-13.webp",
-          "media/street-study-14.webp",
-          "media/street-study-15.webp"
-        ]
-      },
-      {
-        "description": "Camicia azzurra e stivali scuri",
-        "photos": [
-          "media/street-study-16.webp",
-          "media/street-study-17.webp",
-          "media/street-study-18.webp"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "insecto",
-    "title": "Insecto",
-    "year": 2025,
-    "copy": {
-      "intro": [
-        "Insecto stages a small circus formation in progressive decay.",
-        "Vertical red striping establishes a regimental rhythm. Polka dot surfaces and exaggerated volumes reference ceremonial costume without preserving its function. Cosmetic intensity disrupts theatrical balance."
-      ],
-      "end": [
-        "The capsule studies spectacle as structural corrosion.",
-        "Each garment is produced as an individual archive piece, fixed between display and deterioration."
-      ]
-    },
-    "opening": [
-      {
-        "src": "media/portfolio/insecto-r0003151-238.webp",
-        "alt": "Due figure truccate davanti al fondale a righe rosse e bianche",
-        "width": 1200,
-        "height": 1800
-      },
-      {
-        "src": "media/portfolio/insecto-r0003077-164.webp",
-        "alt": "Ritratto con camicia chiara, cravatta a righe e trucco rosso sugli occhi",
-        "width": 1200,
-        "height": 1800
-      },
-      {
-        "src": "media/portfolio/insecto-02.webp",
-        "alt": "Volto dipinto di bianco, fotografato a testa in giù",
-        "width": 907,
-        "height": 1360
-      }
-    ],
-    "sequence": [
-      {
-        "src": "media/editorial/insecto-04.webp",
-        "alt": "Figura con il viso dipinto di bianco distesa sul pavimento a scacchi",
-        "width": 1600,
-        "height": 1067
-      },
-      {
-        "src": "media/editorial/insecto-05.webp",
-        "alt": "Figura inarcata all’indietro sul pavimento a scacchi con il viso capovolto",
-        "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/insecto-06.webp",
-        "alt": "Figura con camicia bianca e trucco rosso agli occhi davanti a righe rosse e bianche",
-        "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/insecto-07.webp",
-        "alt": "Due figure in posa inclinata davanti alla tenda a righe rosse",
-        "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/insecto-08.webp",
-        "alt": "Figura con trucco bianco e tessuto alla bocca su una sedia sul tetto",
-        "width": 960,
-        "height": 1440
-      }
-    ],
-    "ending": [
-      {
-        "src": "media/editorial/insecto-09.webp",
-        "alt": "Figura con copricapo e pantaloni a righe rosse, con le mani dietro la testa",
-        "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/insecto-10.webp",
-        "alt": "Figura con shorts a righe e una lunga manica bianca sollevata",
-        "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/insecto-11.webp",
-        "alt": "Il gruppo Insecto in fila sul tetto davanti a una facciata rosa",
-        "width": 1600,
-        "height": 1067
-      },
-      {
-        "src": "media/editorial/insecto-12.webp",
-        "alt": "Due figure truccate in posa sul tetto, una accovacciata in primo piano",
-        "width": 960,
-        "height": 1440
-      },
-      {
-        "src": "media/editorial/insecto-13.webp",
-        "alt": "Primo piano di una figura con copricapo bicolore e la mano al viso",
-        "width": 960,
-        "height": 1440
-      }
-    ],
-    "lookbook": [
-      {
-        "description": "Camicia azzurra e cravatta",
-        "photos": [
-          "media/insecto-07.webp",
-          "media/insecto-08.webp",
-          "media/insecto-09.webp"
-        ]
-      },
-      {
-        "description": "Camicia a pois e trucco bianco",
-        "photos": [
-          "media/insecto-01.webp",
-          "media/insecto-03.webp",
-          "media/insecto-02.webp"
-        ]
-      },
-      {
-        "description": "Copricapo bicolore e pantaloni a righe",
-        "photos": [
-          "media/insecto-04.webp",
-          "media/insecto-06.webp",
-          "media/insecto-05.webp"
-        ]
-      },
-      {
-        "description": "Tunica a manica lunga e shorts a righe",
-        "photos": [
-          "media/insecto-10.webp",
-          "media/insecto-12.webp",
-          "media/insecto-11.webp"
-        ]
-      }
-    ]
+    }
   },
   {
     "id": "ammassimiliano",
@@ -654,19 +139,19 @@
     "opening": [
       {
         "src": "media/ammassimiliano/pica-9.webp",
-        "alt": "Pica, scatto 9",
+        "alt": "Pica, photo 9",
         "width": 1600,
         "height": 2000
       },
       {
         "src": "media/ammassimiliano/brando-7.webp",
-        "alt": "Brando, scatto 7",
+        "alt": "Brando, photo 7",
         "width": 1600,
         "height": 2000
       },
       {
         "src": "media/ammassimiliano/sis-2.webp",
-        "alt": "Sis, scatto 2",
+        "alt": "Sis, photo 2",
         "width": 1600,
         "height": 2000
       }
@@ -674,19 +159,19 @@
     "sequence": [
       {
         "src": "media/ammassimiliano/rubina-2.webp",
-        "alt": "Rubina, scatto 2",
+        "alt": "Rubina, photo 2",
         "width": 1600,
         "height": 2000
       },
       {
         "src": "media/ammassimiliano/antonio-2.webp",
-        "alt": "Antonio, scatto 2",
+        "alt": "Antonio, photo 2",
         "width": 1600,
         "height": 2000
       },
       {
         "src": "media/ammassimiliano/ars-3.webp",
-        "alt": "Ars, scatto 3",
+        "alt": "Ars, photo 3",
         "width": 1600,
         "height": 2000
       }
@@ -700,19 +185,19 @@
       },
       {
         "src": "media/ammassimiliano/rubina-10.webp",
-        "alt": "Rubina, scatto 10",
+        "alt": "Rubina, photo 10",
         "width": 1600,
         "height": 2000
       },
       {
         "src": "media/ammassimiliano/ars-8.webp",
-        "alt": "Ars, scatto 8",
+        "alt": "Ars, photo 8",
         "width": 1600,
         "height": 2000
       },
       {
         "src": "media/ammassimiliano/sis-8.webp",
-        "alt": "Sis, scatto 8",
+        "alt": "Sis, photo 8",
         "width": 1600,
         "height": 2000
       }
@@ -768,10 +253,512 @@
       }
     ],
     "film": {
-      "asset": "media/ammassimiliano/che-cose-infimalega",
+      "asset": "media/ammassimiliano/che-cose-infimalega-original",
       "width": 960,
-      "height": 720,
-      "captions": "media/ammassimiliano/che-cose-infimalega.it.vtt"
+      "height": 720
     }
+  },
+  {
+    "id": "street-study",
+    "title": "Street Study",
+    "copy": {
+      "intro": [
+        "Street Study. Romantic punk in the urban land.",
+        "It refers in particular to a series of colors, clothes and shapes typical of the 80s, with makeup referring to some cult films of those years. Specifically to romantic punk and new wave, all of which are revisited by Infimalega."
+      ],
+      "end": [
+        "Each piece exists as a singular 1/1 archive unit."
+      ]
+    },
+    "opening": [
+      {
+        "src": "media/portfolio/street-01.webp",
+        "alt": "Black-and-white group portrait on a staircase",
+        "width": 1800,
+        "height": 1200
+      },
+      {
+        "src": "media/portfolio/street-02.webp",
+        "alt": "Close-up with bright eye makeup",
+        "width": 1088,
+        "height": 1360
+      },
+      {
+        "src": "media/portfolio/street-03.webp",
+        "alt": "Full-length look against a red backdrop",
+        "width": 1088,
+        "height": 1360
+      }
+    ],
+    "sequence": [
+      {
+        "src": "media/editorial/street-04.webp",
+        "alt": "Two figures side by side in black and white against a graffitied wall",
+        "width": 1152,
+        "height": 1440
+      },
+      {
+        "src": "media/street-study-01.webp",
+        "alt": "Figure in a grey jacket with keys pinned to it in front of hanging sheets",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "src": "media/street-study-03.webp",
+        "alt": "Frontal close-up with smudged red lipstick",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "src": "media/street-study-02.webp",
+        "alt": "Detail of keys and chains pinned to a grey jacket",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "src": "media/street-study-16.webp",
+        "alt": "Figure in light blue with striped socks among the hanging laundry",
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "ending": [
+      {
+        "src": "media/street-study-15.webp",
+        "alt": "Portrait with dark makeup and white bands crossed over the chest",
+        "width": 1200,
+        "height": 1499
+      },
+      {
+        "src": "media/street-study-07.webp",
+        "alt": "Figure in a camouflage jacket and plaid skirt in front of a sheet",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "src": "media/street-study-09.webp",
+        "alt": "Close-up with a white hood and green eye makeup",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "src": "media/editorial/street-12.webp",
+        "alt": "Detail of the red-sleeved Family Is Family shirt",
+        "width": 1152,
+        "height": 1440
+      },
+      {
+        "src": "media/editorial/street-13.webp",
+        "alt": "Red stockings, striped shoes and a white bag beside a plaid skirt",
+        "width": 1152,
+        "height": 1440
+      }
+    ],
+    "lookbook": [
+      {
+        "description": "Grey jacket with keys",
+        "photos": [
+          "media/street-study-01.webp",
+          "media/street-study-02.webp",
+          "media/street-study-03.webp"
+        ]
+      },
+      {
+        "description": "Tartan skirt and red stockings",
+        "photos": [
+          "media/street-study-04.webp",
+          "media/street-study-05.webp",
+          "media/street-study-06.webp"
+        ]
+      },
+      {
+        "description": "Camouflage jacket and grey hood",
+        "photos": [
+          "media/street-study-07.webp",
+          "media/street-study-08.webp",
+          "media/street-study-09.webp"
+        ]
+      },
+      {
+        "description": "Red sleeves and denim headwear",
+        "photos": [
+          "media/street-study-10.webp",
+          "media/street-study-11.webp",
+          "media/street-study-12.webp"
+        ]
+      },
+      {
+        "description": "White panels and red shoes",
+        "photos": [
+          "media/street-study-13.webp",
+          "media/street-study-14.webp",
+          "media/street-study-15.webp"
+        ]
+      },
+      {
+        "description": "Light blue shirt and dark boots",
+        "photos": [
+          "media/street-study-16.webp",
+          "media/street-study-17.webp",
+          "media/street-study-18.webp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "amore-tossico",
+    "title": "Amore Tossico",
+    "year": 2026,
+    "copy": {
+      "intro": [
+        "Amore Tossico examines proximity without lineage.",
+        "Off-white cotton, intentionally stained and structurally stressed, defines the surface language of the capsule. Irregular puffed sleeves alter proportion while arms remain consistently covered, limiting exposure and gesture."
+      ],
+      "end": [
+        "The garments operate as uniform fragments assembled into a non-biological family.",
+        "Each piece exists as a singular 1/1 archive unit."
+      ]
+    },
+    "opening": [
+      {
+        "src": "media/portfolio/amore-01.webp",
+        "alt": "The Amore Tossico group between red curtains",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "src": "media/portfolio/amore-02.webp",
+        "alt": "Masked figure holding a gilded frame",
+        "width": 1088,
+        "height": 1360
+      },
+      {
+        "src": "media/portfolio/amore-03.webp",
+        "alt": "Portrait with red makeup and an open mouth",
+        "width": 1088,
+        "height": 1360
+      }
+    ],
+    "sequence": [
+      {
+        "src": "media/amore-tossico-10.webp",
+        "alt": "Figure in white with arms outstretched on stage",
+        "width": 1200,
+        "height": 1499
+      },
+      {
+        "src": "media/amore-tossico-06.webp",
+        "alt": "Portrait with blue eyeshadow and a white shirt with wide sleeves",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "src": "media/amore-tossico-03.webp",
+        "alt": "Figure in blue trousers crouching at the edge of the stage",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "src": "media/amore-tossico-04.webp",
+        "alt": "Figure in white standing on a chair between the curtains",
+        "width": 1200,
+        "height": 1499
+      },
+      {
+        "src": "media/amore-tossico-07.webp",
+        "alt": "Figure in green in front of a drum between red curtains",
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "ending": [
+      {
+        "src": "media/amore-tossico-08.webp",
+        "alt": "Close-up of the drummer in green with an open mouth",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "src": "media/editorial/amore-10.webp",
+        "alt": "Black-and-white portrait of a figure raising a hand in front of their face",
+        "width": 1152,
+        "height": 1440
+      },
+      {
+        "src": "media/editorial/amore-11.webp",
+        "alt": "Figure in blue with one foot on a stool between the curtains",
+        "width": 1152,
+        "height": 1440
+      },
+      {
+        "src": "media/amore-tossico-16.webp",
+        "alt": "Masked figure lifting a gilded frame on stage",
+        "width": 1200,
+        "height": 1499
+      },
+      {
+        "src": "media/amore-tossico-15.webp",
+        "alt": "Side view of a figure in a dark coat between the curtains",
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "runway": [
+      {
+        "src": "media/portfolio/runway-01.webp",
+        "alt": "View of the room during the Amore Tossico runway show",
+        "width": 1800,
+        "height": 1200
+      },
+      {
+        "src": "media/portfolio/runway-02.webp",
+        "alt": "Portrait of a look from the Amore Tossico runway show",
+        "width": 1360,
+        "height": 907
+      },
+      {
+        "src": "media/portfolio/runway-extra-01.webp",
+        "alt": "Infimalega sign above the runway entrance",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "media/portfolio/runway-extra-02.webp",
+        "alt": "Look with black headwear and blue trousers in front of the audience",
+        "width": 1440,
+        "height": 961
+      },
+      {
+        "src": "media/portfolio/runway-extra-03.webp",
+        "alt": "Layered look with pale draped fabric and red sleeves",
+        "width": 1440,
+        "height": 961
+      },
+      {
+        "src": "media/portfolio/runway-extra-04.webp",
+        "alt": "Portrait with dark headwear and a white shirt beside a red curtain",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "media/portfolio/runway-extra-05.webp",
+        "alt": "Look with a covered face, cropped top and two-tone trousers",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "media/portfolio/runway-extra-06.webp",
+        "alt": "Mint-green outfit worn in front of the audience",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "media/portfolio/runway-extra-07.webp",
+        "alt": "Figure in a black coat sitting on a sofa",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "media/portfolio/runway-extra-08.webp",
+        "alt": "Figure in a photo-print shirt and open jacket among the guests",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "media/portfolio/runway-extra-09.webp",
+        "alt": "Masked figure holding a sign with red lettering in front of the audience",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "media/portfolio/runway-extra-10.webp",
+        "alt": "Infimalega labels and garments arranged on a red plaid table",
+        "width": 1440,
+        "height": 960
+      }
+    ],
+    "lookbook": [
+      {
+        "description": "Ivory dress with lace and a belt",
+        "photos": [
+          "media/amore-tossico-10.webp",
+          "media/amore-tossico-11.webp",
+          "media/amore-tossico-12.webp"
+        ]
+      },
+      {
+        "description": "Cap and blue trousers",
+        "photos": [
+          "media/amore-tossico-01.webp",
+          "media/amore-tossico-03.webp",
+          "media/amore-tossico-02.webp"
+        ]
+      },
+      {
+        "description": "White shirt with wide sleeves and blue eyeshadow",
+        "photos": [
+          "media/amore-tossico-05.webp",
+          "media/amore-tossico-04.webp",
+          "media/amore-tossico-06.webp"
+        ]
+      },
+      {
+        "description": "The drummer’s green shirt",
+        "photos": [
+          "media/amore-tossico-07.webp",
+          "media/amore-tossico-09.webp",
+          "media/amore-tossico-08.webp"
+        ]
+      },
+      {
+        "description": "Grey jacket and green turtleneck",
+        "photos": [
+          "media/amore-tossico-15.webp",
+          "media/amore-tossico-13.webp",
+          "media/amore-tossico-14.webp"
+        ]
+      },
+      {
+        "description": "Masked figure between the curtains",
+        "photos": [
+          "media/amore-tossico-16.webp",
+          "media/amore-tossico-17.webp",
+          "media/amore-tossico-18.webp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "insecto",
+    "title": "Insecto",
+    "year": 2025,
+    "copy": {
+      "intro": [
+        "Insecto stages a small circus formation in progressive decay.",
+        "Vertical red striping establishes a regimental rhythm. Polka dot surfaces and exaggerated volumes reference ceremonial costume without preserving its function. Cosmetic intensity disrupts theatrical balance."
+      ],
+      "end": [
+        "The capsule studies spectacle as structural corrosion.",
+        "Each garment is produced as an individual archive piece, fixed between display and deterioration."
+      ]
+    },
+    "opening": [
+      {
+        "src": "media/portfolio/insecto-r0003151-238.webp",
+        "alt": "Two figures in makeup against a red and white striped backdrop",
+        "width": 1200,
+        "height": 1800
+      },
+      {
+        "src": "media/portfolio/insecto-r0003077-164.webp",
+        "alt": "Portrait in a pale shirt and striped tie with red eye makeup",
+        "width": 1200,
+        "height": 1800
+      },
+      {
+        "src": "media/portfolio/insecto-02.webp",
+        "alt": "Face painted white, photographed upside down",
+        "width": 907,
+        "height": 1360
+      }
+    ],
+    "sequence": [
+      {
+        "src": "media/editorial/insecto-04.webp",
+        "alt": "Figure with a white-painted face lying on a chequered floor",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "src": "media/editorial/insecto-05.webp",
+        "alt": "Figure arching backwards on a chequered floor with their face upside down",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "media/editorial/insecto-06.webp",
+        "alt": "Figure with a white shirt and red eye makeup against red and white stripes",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "media/editorial/insecto-07.webp",
+        "alt": "Two figures tilted in front of a red-striped curtain",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "media/editorial/insecto-08.webp",
+        "alt": "Figure with white makeup and fabric at their mouth, seated on a rooftop chair",
+        "width": 960,
+        "height": 1440
+      }
+    ],
+    "ending": [
+      {
+        "src": "media/editorial/insecto-09.webp",
+        "alt": "Figure with headwear and red-striped trousers, hands behind their head",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "media/editorial/insecto-10.webp",
+        "alt": "Figure in striped shorts raising a long white sleeve",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "media/editorial/insecto-11.webp",
+        "alt": "The Insecto group in a line on a rooftop in front of a pink façade",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "src": "media/editorial/insecto-12.webp",
+        "alt": "Two figures in makeup posing on a rooftop, one crouching in the foreground",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "media/editorial/insecto-13.webp",
+        "alt": "Close-up of a figure in two-tone headwear with a hand to their face",
+        "width": 960,
+        "height": 1440
+      }
+    ],
+    "lookbook": [
+      {
+        "description": "Light blue shirt and tie",
+        "photos": [
+          "media/insecto-07.webp",
+          "media/insecto-08.webp",
+          "media/insecto-09.webp"
+        ]
+      },
+      {
+        "description": "Polka-dot shirt and white makeup",
+        "photos": [
+          "media/insecto-01.webp",
+          "media/insecto-03.webp",
+          "media/insecto-02.webp"
+        ]
+      },
+      {
+        "description": "Two-tone headwear and striped trousers",
+        "photos": [
+          "media/insecto-04.webp",
+          "media/insecto-06.webp",
+          "media/insecto-05.webp"
+        ]
+      },
+      {
+        "description": "Long-sleeved tunic and striped shorts",
+        "photos": [
+          "media/insecto-10.webp",
+          "media/insecto-12.webp",
+          "media/insecto-11.webp"
+        ]
+      }
+    ]
   }
 ]

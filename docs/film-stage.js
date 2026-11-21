@@ -5,19 +5,19 @@
   const folder = "media/portfolio/";
   const massimiliano = "media/ammassimiliano/";
   const frames = [
-    { href: "street-study.html", image: "street-01.webp", title: "Street Study, il gruppo sulla scalinata", ratio: 1.5, size: .17, x: -0.32, y: -0.29 },
-    { href: "amore-tossico.html", image: "amore-03.webp", title: "Amore Tossico, ritratto", ratio: .8, size: .093, x: -0.17, y: -0.1 },
+    { href: "street-study.html", image: "street-01.webp", title: "Street Study, the group on the staircase", ratio: 1.5, size: .17, x: -0.32, y: -0.29 },
+    { href: "amore-tossico.html", image: "amore-03.webp", title: "Amore Tossico, portrait", ratio: .8, size: .093, x: -0.17, y: -0.1 },
     { href: "cuvee-semaine.html", image: "cuvee-semaine-landing-threshold.png", film: "cuvee-semaine-landing-threshold.mp4", title: "Cuvée Semaine, film", ratio: 1450/1080, size: .155, x: 0.44, y: -0.28 },
-    { href: "insecto.html", image: "insecto-r0003077-164.webp", title: "Insecto, ritratto a righe", ratio: 2/3, size: .10, x: 0.29, y: 0.34 },
-    { href: "amore-tossico.html", image: "amore-tossico-landing-threshold.png", film: "amore-tossico-landing-threshold.mp4", title: "Amore Tossico, film della sfilata", ratio: 16/9, size: .18, x: -0.28, y: 0.32 },
-    { href: "cuvee-semaine.html", image: "cuvee-03.webp", title: "Cuvée Semaine, dettaglio della stampa", ratio: .75, size: .08, x: -0.71, y: -0.06 },
-    { href: "street-study.html", image: "street-03.webp", title: "Street Study, figura davanti al murale", ratio: .8, size: .12, x: 0.7, y: 0.57 },
-    { href: "insecto.html", image: "insecto-02.webp", title: "Insecto, ritratto capovolto", ratio: 907/1360, size: .115, x: 0, y: 0.78 },
-    { href: "amore-tossico.html", image: "runway-01.webp", title: "Amore Tossico, veduta della sfilata", ratio: 1.5, size: .185, x: 0.35, y: -0.66 },
-    { href: "amore-tossico.html", image: "amore-02.webp", title: "Amore Tossico, ritratto nella cornice", ratio: .8, size: .10, x: -0.62, y: -0.67 },
-    { href: "ammassimiliano.html", folder: massimiliano, image: "presentation-landing-threshold.png", film: "presentation-landing-threshold.mp4", title: "A Massimiliano, film di presentazione", ratio: 4/3, size: .145, x: 0.34, y: 0.045 },
-    { href: "ammassimiliano.html", folder: massimiliano, image: "pica-9.webp", title: "A Massimiliano, ritratto di Pica", ratio: .8, size: .10, x: -0.40, y: 0.025 },
-    { href: "ammassimiliano.html", folder: massimiliano, image: "rubina-10.webp", title: "A Massimiliano, ritratto di Rubina", ratio: .8, size: .11, x: -0.41, y: 0.67 },
+    { href: "insecto.html", image: "insecto-r0003077-164.webp", title: "Insecto, striped portrait", ratio: 2/3, size: .10, x: 0.29, y: 0.34 },
+    { href: "amore-tossico.html", image: "amore-tossico-landing-threshold.png", film: "amore-tossico-landing-threshold.mp4", title: "Amore Tossico, runway film", ratio: 16/9, size: .18, x: -0.28, y: 0.32 },
+    { href: "cuvee-semaine.html", image: "cuvee-03.webp", title: "Cuvée Semaine, print detail", ratio: .75, size: .08, x: -0.71, y: -0.06 },
+    { href: "street-study.html", image: "street-03.webp", title: "Street Study, figure in front of a mural", ratio: .8, size: .12, x: 0.7, y: 0.57 },
+    { href: "insecto.html", image: "insecto-02.webp", title: "Insecto, upside-down portrait", ratio: 907/1360, size: .115, x: 0, y: 0.78 },
+    { href: "amore-tossico.html", image: "runway-01.webp", title: "Amore Tossico, view of the runway show", ratio: 1.5, size: .185, x: 0.35, y: -0.66 },
+    { href: "amore-tossico.html", image: "amore-02.webp", title: "Amore Tossico, framed portrait", ratio: .8, size: .10, x: -0.62, y: -0.67 },
+    { href: "ammassimiliano.html", folder: massimiliano, image: "presentation-landing-threshold.png", film: "presentation-landing-threshold.mp4", title: "A Massimiliano, presentation film", ratio: 4/3, size: .145, x: 0.34, y: 0.045 },
+    { href: "ammassimiliano.html", folder: massimiliano, image: "pica-9.webp", title: "A Massimiliano, portrait of Pica", ratio: .8, size: .10, x: -0.40, y: 0.025 },
+    { href: "ammassimiliano.html", folder: massimiliano, image: "rubina-10.webp", title: "A Massimiliano, portrait of Rubina", ratio: .8, size: .11, x: -0.41, y: 0.67 },
   ];
 
   const thermal = document.getElementById("thermal-film");
@@ -271,7 +271,7 @@
     link.className = "stage-tile";
     link.draggable = false;
     link.tabIndex = -1;
-    link.setAttribute("aria-label", frame.title + ". Apri la collezione");
+    link.setAttribute("aria-label", frame.title + ". Open the collection");
     const mediaFolder = frame.folder ?? folder;
     let media;
     if (frame.film) {
@@ -477,7 +477,7 @@
     field.className = "stage-field";
     field.tabIndex = 0;
     field.setAttribute("role", "group");
-    field.setAttribute("aria-label", "Fotografie e film delle collezioni. Usa le frecce per esplorare.");
+    field.setAttribute("aria-label", "Collection photographs and films. Use the arrow keys to explore.");
     stage.append(field);
     frames.forEach(addTile);
     field.addEventListener("pointerleave", () => clearHover(false));

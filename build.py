@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "docs"
 CATALOG = json.loads((ROOT / "catalog.json").read_text())
 EDITORIAL = json.loads((ROOT / "editorial.json").read_text())
-SERIES = CATALOG["series"]
+SERIES = {entry["id"]: entry for entry in CATALOG["series"]}
 PRODUCTS = CATALOG["products"]
 CUTOUT_MANIFEST = ROOT / "shop_cutouts.json"
 CUTOUTS = json.loads(CUTOUT_MANIFEST.read_text()) if CUTOUT_MANIFEST.is_file() else {}
@@ -17,12 +17,11 @@ EMAIL = "mailto:infimalega@gmail.com"
 SHOP_STYLES = ("portfolio.css", "shop-archive.css?v=half-gallery")
 ABOUT_STYLES = ("portfolio.css?v=mobile-balance", "about.css?v=green-terminal")
 EDITORIAL_STYLES = ("portfolio.css?v=plain", "editorial.css?v=film-sound-2")
-STATUS_LABELS = {"Available": "Disponibile", "Archived": "Archiviato"}
 MENU = [
     ("Collections", "index.html#collezioni", "collections"),
-    ("Archivio", "shop.html", "shop"),
+    ("Archive", "shop.html", "shop"),
     ("About", "about.html", "about"),
-    ("Contatti", "contatti.html", "contatti"),
+    ("Contact", "contatti.html", "contatti"),
 ]
 COVERS = {"street-study": 3, "amore-tossico": 9, "insecto": 7}
 COLLECTION_TITLES = {
@@ -43,9 +42,9 @@ def inner_header(current=None):
         selected = ' aria-current="page"' if key == current else ""
         links.append(f'<a href="{href}"{selected}>{name}</a>')
 
-    nav = '\n  <nav class="site-nav" aria-label="Navigazione principale">' + "".join(links) + "</nav>"
+    nav = '\n  <nav class="site-nav" aria-label="Main navigation">' + "".join(links) + "</nav>"
     return f"""<header class="site-header inner-header">
-  <a class="site-mark" href="index.html#film" aria-label="Infimalega, torna alla pagina iniziale">
+  <a class="site-mark" href="index.html#film" aria-label="Infimalega, back to the homepage">
     <img draggable="false" src="media/portfolio/croce.png" alt="" width="280" height="279">
   </a>{nav}
 </header>"""
@@ -57,7 +56,7 @@ def document(name, title, class_name, content, *, styles=("site.css",), script=N
     css = "\n".join(f'<link rel="stylesheet" href="{source}">' for source in (*styles, "display-type.css", "inner-nav.css?v=page-wipe"))
     js = f'<script src="{script}"{" defer" if defer_script else ""}></script>' if script else ""
     (OUTPUT / name).write_text(f"""<!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,7 +70,7 @@ def document(name, title, class_name, content, *, styles=("site.css",), script=N
 {js}
 </head>
 <body class="{class_name}">
-<a class="inner-menu-return" href="index.html#menu" aria-label="Torna al menu principale">Menu</a>
+<a class="inner-menu-return" href="index.html#menu" aria-label="Back to the main menu">Menu</a>
 {content}
 </body>
 </html>
@@ -96,28 +95,29 @@ def shop_frames(record):
 
 
 panels = []
-for entry in SERIES:
-    src = entry["photos"][COVERS[entry["id"]]]["src"]
-    href = entry["id"] + ".html"
-    name = escape(entry["name"])
+for entry in EDITORIAL:
+    slug = entry["id"]
+    src = SERIES[slug]["photos"][COVERS[slug]]["src"] if slug in COVERS else entry["opening"][0]["src"]
+    href = slug + ".html"
+    name = escape(entry["title"])
     panels.append(f"""<figure>
   <a href="{href}">{photo(src, name, eager=True)}</a>
   <figcaption><a href="{href}">{name}</a></figcaption>
 </figure>""")
 
-document("serie.html", "Serie", "series", f"""
+document("serie.html", "Collections", "series", f"""
 {inner_header()}
 <main>
-  <h1 class="visually-hidden">Serie</h1>
+  <h1 class="visually-hidden">Collections</h1>
   <div class="triptych">
     {''.join(panels)}
   </div>
 </main>""")
 
 
-EDITORIAL_BACK = '<a class="editorial-back" href="index.html#collezioni"><span aria-hidden="true">←</span> Collezioni</a>'
+EDITORIAL_BACK = '<a class="editorial-back" href="index.html#collezioni"><span aria-hidden="true">←</span> Collections</a>'
 EDITORIAL_ARCHIVE = """<div class="editorial-archive-callout">
-    <a href="shop.html">Vai all’archivio</a>
+    <a href="shop.html">View the archive</a>
   </div>"""
 
 document("about.html", "About", "about-document", f"""
@@ -161,28 +161,24 @@ document("about.html", "About", "about-document", f"""
 PHOTO_VIEWER = """<dialog class="viewer" aria-labelledby="viewer-title">
   <div class="viewer-toolbar">
     <p id="viewer-title"></p>
-    <button class="viewer-close" type="button" aria-label="Chiudi foto">×</button>
+    <button class="viewer-close" type="button" aria-label="Close photo viewer">×</button>
   </div>
   <div class="viewer-stage">
-    <button class="viewer-prev" type="button" aria-label="Foto precedente">←</button>
+    <button class="viewer-prev" type="button" aria-label="Previous photo">←</button>
     <img id="viewer-image" alt="" draggable="false">
-    <button class="viewer-next" type="button" aria-label="Foto successiva">→</button>
+    <button class="viewer-next" type="button" aria-label="Next photo">→</button>
   </div>
 </dialog>"""
 
-def collection_film(anchor, asset, label, width, height, *, captions=None):
+def collection_film(anchor, asset, label, width, height):
     poster = asset + "-opening.jpg"
     if not (OUTPUT / poster).is_file():
         poster = asset + ".jpg"
-    caption_track = (
-        f'\n      <track kind="captions" src="{escape(captions)}" srclang="it" label="Italiano" default>'
-        if captions else ""
-    )
     return f"""<figure id="{escape(anchor)}" class="collection-film" style="--film-ratio: {width} / {height}">
     <video autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" draggable="false" preload="auto" poster="{escape(poster)}" width="{width}" height="{height}" aria-label="{escape(label)}">
-      <source src="{escape(asset)}.mp4?v=audio-1" type="video/mp4">{caption_track}
+      <source src="{escape(asset)}.mp4?v=audio-1" type="video/mp4">
     </video>
-    <button class="film-sound" type="button" aria-label="Audio del film" aria-pressed="false" hidden>
+    <button class="film-sound" type="button" aria-label="Film audio" aria-pressed="false" hidden>
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
         <path d="M3 9h4l5-4v14l-5-4H3z"/>
         <path class="sound-muted" d="m16 9 5 6m0-6-5 6"/>
@@ -220,7 +216,7 @@ def editorial_lookbook(looks):
             preview = f"media/lookbook/thumb/{Path(photo).name}"
             src = escape(preview if (OUTPUT / preview).is_file() else photo)
             frames.append(f"""        <a href="{escape(photo)}" data-photo>
-          <img draggable="false" src="{src}" alt="{description}, foto {number} di {photo_count}" width="240" height="300" loading="lazy" decoding="async">
+          <img draggable="false" src="{src}" alt="{description}, photo {number} of {photo_count}" width="240" height="300" loading="lazy" decoding="async">
         </a>""")
         frame_links = "\n".join(frames)
         strips.append(f"""    <figure class="lookbook-strip" data-gallery aria-label="{label}">
@@ -267,16 +263,15 @@ def editorial_page(entry, next_entry, runway_href):
         )
     elif film:
         opening_film = collection_film(
-            f"{slug}-film", film["asset"], f"Video della collezione {entry['title']}",
+            f"{slug}-film", film["asset"], f"Film for the {entry['title']} collection",
             int(film["width"]), int(film["height"]),
-            captions=film.get("captions"),
         )
     runway = ""
     if runway_href:
         runway = f"""
   <div class="editorial-runway" id="sfilata">
-    <select class="runway-menu" aria-label="Sfilata. Scegli una voce per aprire la galleria." hidden></select>
-    <a class="editorial-back" href="{escape(runway_href)}">Sfilata</a>
+    <select class="runway-menu" aria-label="Runway. Select an option to open the gallery." hidden></select>
+    <a class="editorial-back" href="{escape(runway_href)}">Runway</a>
   </div>"""
 
     next_link = ""
@@ -318,16 +313,16 @@ def runway_page(entry):
 <main class="editorial" aria-labelledby="editorial-title">
   <div class="editorial-heading">
     <h1 id="editorial-title" class="editorial-title">{heading}</h1>
-    <p class="editorial-year">Sfilata</p>
+    <p class="editorial-year">Runway</p>
   </div>
-  <div data-gallery aria-label="{title}, sfilata">
+  <div data-gallery aria-label="{title}, runway show">
     {editorial_grid("runway", entry["runway"])}
   </div>
   {EDITORIAL_ARCHIVE}
 </main>
 <footer class="editorial-footer">
   <a class="editorial-back" href="{collection_href}"><span aria-hidden="true">←</span> {title}</a>
-  <a class="editorial-next" href="index.html#collezioni">Collezioni <span aria-hidden="true">→</span></a>
+  <a class="editorial-next" href="index.html#collezioni">Collections <span aria-hidden="true">→</span></a>
 </footer>
 {PHOTO_VIEWER}"""
 
@@ -341,16 +336,16 @@ for index, entry in enumerate(EDITORIAL):
         "editorial-page",
         editorial_page(entry, next_entry, runway_href),
         styles=EDITORIAL_STYLES,
-        script="portfolio.js?v=runway-page" if runway_href else "portfolio.js?v=film-sound-2",
+        script="portfolio.js?v=runway-page-en" if runway_href else "portfolio.js?v=film-sound-2",
     )
     if runway_href:
         document(
             runway_href,
-            entry["title"] + " · Sfilata",
+            entry["title"] + " · Runway",
             "editorial-page",
             runway_page(entry),
             styles=EDITORIAL_STYLES,
-            script="portfolio.js?v=runway-page",
+            script="portfolio.js?v=runway-page-en",
         )
 
 
@@ -365,7 +360,7 @@ document(
     f"""
 {inner_header()}
 <main class="about-page">
-  <section class="about-frame" tabindex="0" aria-labelledby="manifesto-title">
+  <section class="about-frame" tabindex="0" lang="it" aria-labelledby="manifesto-title">
     <div class="manifesto-sheet">
       <h1 id="manifesto-title">MANIFESTO</h1>
 {manifesto}
@@ -377,31 +372,31 @@ document(
     theme_color="#007100",
 )
 
-document("da-vicino.html", "Da vicino", "close-page", """
-<a class="site-mark" href="index.html#film" aria-label="Infimalega, torna alla pagina iniziale">
+document("da-vicino.html", "Close Up", "close-page", """
+<a class="site-mark" href="index.html#film" aria-label="Infimalega, back to the homepage">
   <img draggable="false" src="media/portfolio/croce.png" alt="" width="280" height="279">
 </a>
 <main class="close-poster">
   <div class="close-opening">
-    <h1>Mi vedi ancora?<br>Dentro la cornice?</h1>
-    <fieldset aria-label="Mi vedi ancora?">
-      <label>Sì <input type="radio" name="vedi" value="si"></label>
+    <h1>Can you still see me?<br>Inside the frame?</h1>
+    <fieldset aria-label="Can you still see me?">
+      <label>Yes <input type="radio" name="vedi" value="si"></label>
       <label>No <input type="radio" name="vedi" value="no"></label>
     </fieldset>
-    <label for="close-break">Segui il ritratto<br>mentre scivola.<br>Dove lo perdi?</label>
+    <label for="close-break">Follow the portrait<br>as it slips away.<br>Where do you lose it?</label>
     <input id="close-break" type="text" size="26" autocomplete="off">
   </div>
 
-  <a class="close-corner close-replay" href="da-vicino.html">Rifai la<br>scansione</a>
-  <a class="close-corner close-original" href="media/amore-tossico-17.webp">La foto<br>intera</a>
+  <a class="close-corner close-replay" href="da-vicino.html">Scan<br>again</a>
+  <a class="close-corner close-original" href="media/amore-tossico-17.webp">The full<br>photo</a>
 
   <form class="close-reply" action="amore-tossico.html#look-6" autocomplete="off">
-    <label for="close-answer">La cornice è ancora lì.<br>Che cosa rimane<br>quando sparisce?<br>Scrivilo qui.</label>
+    <label for="close-answer">The frame is still there.<br>What remains<br>when it disappears?<br>Write it here.</label>
     <textarea id="close-answer" rows="3" cols="25"></textarea>
-    <label class="close-field">nome <input type="text" size="20"></label>
+    <label class="close-field">name <input type="text" size="20"></label>
     <label class="close-field">email <input type="email" size="20"></label>
-    <p>Continua con<br>Amore Tossico</p>
-    <button type="submit">ENTRA</button>
+    <p>Continue with<br>Amore Tossico</p>
+    <button type="submit">ENTER</button>
   </form>
 
   <a class="close-back" href="amore-tossico.html#look-6">
@@ -421,12 +416,12 @@ for record in shop_records:
     materials = escape(record.get("detailMaterials") or record["materials"])
     rows.append(f'<tr><td>{code}</td><th scope="row"><a href="{product_href(record)}">{name}</a></th><td>{year}</td><td>{materials}</td></tr>')
 
-document("archivio.html", "Archivio", "archive", f"""
+document("archivio.html", "Archive", "archive", f"""
 {inner_header()}
 <main class="archive-content">
-  <h1>Archivio</h1>
+  <h1>Archive</h1>
   <table>
-    <thead><tr><th scope="col">Codice</th><th scope="col">Capo</th><th scope="col">Anno</th><th scope="col">Materiali</th></tr></thead>
+    <thead><tr><th scope="col">Code</th><th scope="col">Piece</th><th scope="col">Year</th><th scope="col">Materials</th></tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
 </main>""")
@@ -437,7 +432,7 @@ def shop_card(record):
     href = escape(product_href(record))
     year = escape(str(record["year"]))
     status = record["status"]
-    status_text = escape(STATUS_LABELS.get(status, status))
+    status_text = escape(status)
     cover = shop_photo({"src": record["src"]})
     frames = shop_frames(record)
     alternate = ""
@@ -446,7 +441,7 @@ def shop_card(record):
         alternate = f'\n      <img class="shop-card-alternate" draggable="false" src="{alternate_src}" alt="" loading="lazy" decoding="async">'
     photo_class = " shop-card-photo--swap" if alternate else ""
     return f"""<article class="shop-card" id="{code.lower()}">
-  <a class="shop-card-preview" href="{href}" aria-label="Apri la scheda di {name}">
+  <a class="shop-card-preview" href="{href}" aria-label="View {name}">
     <figure class="shop-card-photo{photo_class}">
       <img class="shop-card-cover" draggable="false" src="{escape(cover["src"])}" alt="" loading="lazy" decoding="async">{alternate}
     </figure>
@@ -464,18 +459,18 @@ def shop_item(record):
     name = escape(record["name"])
     status = record["status"]
     fields = [
-        ("Anno", record["year"]),
-        ("Serie", record.get("series") or "Unassigned"),
-        ("Materiali", record.get("detailMaterials") or record["materials"]),
-        ("Origine", record.get("origin")),
-        ("Stato", STATUS_LABELS.get(status, status)),
+        ("Year", record["year"]),
+        ("Collection", record.get("series") or "Unassigned"),
+        ("Materials", record.get("detailMaterials") or record["materials"]),
+        ("Origin", record.get("origin")),
+        ("Status", status),
     ]
     facts = "\n".join(f'      <dt>{label}</dt><dd>{escape(str(value))}</dd>' for label, value in fields if value)
 
     images = []
     for index, frame in enumerate(shop_frames(record), start=1):
         src = escape(frame["src"])
-        alt = f"{name}, foto {index}"
+        alt = f"{name}, photo {index}"
         dimensions = ""
         if frame.get("width") and frame.get("height"):
             dimensions = f' width="{int(frame["width"])}" height="{int(frame["height"])}"'
@@ -498,20 +493,20 @@ def shop_item(record):
   <div class="shop-item-gallery" data-gallery aria-label="{name}">
 {photos}
   </div>
-  <nav class="shop-item-links" aria-label="Link del capo">
-    <a href="shop.html#{code.lower()}"><span aria-hidden="true">←</span> Archivio</a>
-    <a href="contatti.html">Contattaci per questo capo</a>
+  <nav class="shop-item-links" aria-label="Piece links">
+    <a href="shop.html#{code.lower()}"><span aria-hidden="true">←</span> Archive</a>
+    <a href="contatti.html">Contact us about this piece</a>
   </nav>
 </main>
 {PHOTO_VIEWER}"""
 
 
 cards = "\n".join(shop_card(record) for record in shop_records)
-document("shop.html", "Archivio", "shop-page", f"""
+document("shop.html", "Archive", "shop-page", f"""
 {inner_header("shop")}
 <main class="shop-content">
   <header class="shop-heading">
-    <h1 class="code-title--large">Archivio</h1>
+    <h1 class="code-title--large">Archive</h1>
   </header>
   <div class="shop-grid">
 {cards}
@@ -530,12 +525,12 @@ for record in PRODUCTS:
         theme_color="#ffffff",
     )
 
-document("contatti.html", "Contatti", "contact", f"""
+document("contatti.html", "Contact", "contact", f"""
 {inner_header("contatti")}
 <main class="terminal-screen" aria-labelledby="contact-title">
-  <h1 class="visually-hidden" id="contact-title">Contatti</h1>
+  <h1 class="visually-hidden" id="contact-title">Contact</h1>
   <span class="terminal-boot" aria-hidden="true"></span>
-  <address class="terminal-directory" aria-label="Recapiti di Infimalega">
+  <address class="terminal-directory" aria-label="Infimalega contact details">
     <a class="terminal-line" href="{INSTAGRAM}" rel="external" aria-label="Instagram, @infimalega">
       <span class="terminal-output"><span class="terminal-text"><span class="terminal-key">instagram  </span><span class="terminal-value">@infimalega</span></span></span>
     </a>
@@ -551,5 +546,5 @@ document("blog.html", "Blog", "blog-document", f"""
 <main class="blog-page" aria-labelledby="blog-title">
   <h1 id="blog-title">Blog</h1>
   <img class="blog-flag" src="media/portfolio/bandiera-infimalega.webp" width="1085" height="1715"
-    alt="Bandiera Infimalega in stoffa rossa e blu, legata a una struttura di rami" draggable="false" decoding="async">
+    alt="Red and blue Infimalega flag tied to a frame made of branches" draggable="false" decoding="async">
 </main>""", styles=("portfolio.css", "blog.css"), favicon="media/portfolio/croce.png", theme_color="#0d0a0f")

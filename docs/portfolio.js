@@ -270,12 +270,12 @@ for (const film of document.querySelectorAll(".collection-film")) {
 }
 
 function runwayVariants() {
-  const word = "sfilata";
+  const word = "runway";
   const typos = [
-    "Sfliata", "sFiLatTa", "sfiAlta", "Sfillata", "SfILat", "Sfiata",
-    "sFiIlata", "sfiLatAA", "sFilta", "sFILtAa", "sFIlaAt", "SFfILaTa",
+    "Runawy", "rUnWaAy", "ruNwYa", "Runnway", "RuNwa", "Ruway",
+    "rRuNWay", "runWaYY", "rUNwy", "rUNwaaY", "rUnwaYy", "RUNnWAy",
   ];
-  const variants = ["Sfilata"];
+  const variants = ["Runway"];
   const combinations = 1 << word.length;
   for (let index = 1; index < combinations; index++) {
     // An odd step visits every casing once and breaks up alphabetical runs.
@@ -292,7 +292,7 @@ function runwayVariants() {
 const runwayMenu = document.querySelector("select.runway-menu");
 if (runwayMenu) {
   const link = runwayMenu.nextElementSibling;
-  const placeholder = new Option("Sfilata", "", true, true);
+  const placeholder = new Option("Runway", "", true, true);
   placeholder.disabled = true;
   placeholder.hidden = true;
   runwayMenu.replaceChildren(placeholder, ...runwayVariants().map((variant) => new Option(variant)));

@@ -28,7 +28,7 @@ for (const insert of inserts) {
   const { video, button } = insert;
   const label = video.getAttribute("aria-label");
   const updateButton = () => {
-    button.textContent = video.paused ? "Riproduci" : "Pausa";
+    button.textContent = video.paused ? "Play" : "Pause";
     button.setAttribute("aria-label", button.textContent + " " + label.toLowerCase());
   };
   video.addEventListener("play", updateButton);
