@@ -4,7 +4,6 @@
 
 .about-document .inner-header .site-nav {
   color: #fff;
-  text-shadow: 0 1px 1px #000, 0 0 3px #000;
 }
 
 .about-page {
@@ -12,7 +11,7 @@
   place-items: center;
   min-height: 100vh;
   min-height: 100dvh;
-  background: repeating-linear-gradient(#fff 0 2px, #000 2px 4px);
+  background: repeating-linear-gradient(#00ee00 0 2px, #000 2px 4px);
 }
 
 .about-frame {
@@ -22,13 +21,13 @@
   overscroll-behavior: contain;
   container-type: inline-size;
   background: #000;
-  color: #fff;
+  color: #00ff00;
   color-scheme: light;
   font: bold 24px/normal Courier, "Courier New", monospace;
 }
 
 .about-frame:focus-visible {
-  outline: 1px dotted #fff;
+  outline: 1px dotted #00ff00;
   outline-offset: 0;
 }
 
@@ -42,7 +41,7 @@
 .about-print {
   width: 44cqw;
   margin: 1cqw 0 0 1cqw;
-  background: #fff;
+  background: #00ff00;
 }
 
 .about-print img {
@@ -80,7 +79,7 @@
   width: fit-content;
   margin-block-end: 1.65em;
   padding-inline: .18em;
-  background: #fff;
+  background: #00ff00;
   color: #000;
   font-size: clamp(1.3rem, 5.4cqw, 2.6rem);
   line-height: 1;
@@ -124,11 +123,11 @@
 @media (max-width: 60rem) {
   .about-page {
     background: repeating-linear-gradient(to bottom,
-      #777 0 1px, #bbb 1px 2px, #999 2px 3px, #555 3px 4px,
-      #666 4px 5px, #ddd 5px 6px, #fff 6px 7px, #888 7px 9px,
-      #444 9px 11px, #777 11px 12px, #eee 12px 13px,
-      #888 13px 14px, #555 14px 15px, #666 15px 16px,
-      #bbb 16px 17px, #888 17px 19px);
+      #076d07 0 1px, #147f13 1px 2px, #117b10 2px 3px, #006500 3px 4px,
+      #006d00 4px 5px, #108312 5px 6px, #148514 6px 7px, #087508 7px 9px,
+      #006300 9px 11px, #087309 11px 12px, #168916 12px 13px,
+      #0b780b 13px 14px, #006600 14px 15px, #006e01 15px 16px,
+      #0e7d0e 16px 17px, #087408 17px 19px);
   }
 }
 

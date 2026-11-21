@@ -15,7 +15,7 @@ CUTOUTS = json.loads(CUTOUT_MANIFEST.read_text()) if CUTOUT_MANIFEST.is_file() e
 INSTAGRAM = "https://www.instagram.com/infimalega/"
 EMAIL = "mailto:infimalega@gmail.com"
 SHOP_STYLES = ("portfolio.css", "shop-archive.css?v=half-gallery")
-ABOUT_STYLES = ("portfolio.css?v=mobile-balance", "about.css?v=monochrome")
+ABOUT_STYLES = ("portfolio.css?v=mobile-balance", "about.css?v=green-terminal")
 EDITORIAL_STYLES = ("portfolio.css?v=plain", "editorial.css?v=film-sound-2")
 STATUS_LABELS = {"Available": "Disponibile", "Archived": "Archiviato"}
 MENU = [
@@ -156,7 +156,7 @@ document("about.html", "About", "about-document", f"""
       </form>
     </div>
   </section>
-</main>""", styles=ABOUT_STYLES, favicon="media/portfolio/croce.png")
+</main>""", styles=ABOUT_STYLES, favicon="media/portfolio/croce.png", theme_color="#007100")
 
 PHOTO_VIEWER = """<dialog class="viewer" aria-labelledby="viewer-title">
   <div class="viewer-toolbar">
@@ -170,13 +170,17 @@ PHOTO_VIEWER = """<dialog class="viewer" aria-labelledby="viewer-title">
   </div>
 </dialog>"""
 
-def collection_film(anchor, asset, label, width, height):
+def collection_film(anchor, asset, label, width, height, *, captions=None):
     poster = asset + "-opening.jpg"
     if not (OUTPUT / poster).is_file():
         poster = asset + ".jpg"
+    caption_track = (
+        f'\n      <track kind="captions" src="{escape(captions)}" srclang="it" label="Italiano" default>'
+        if captions else ""
+    )
     return f"""<figure id="{escape(anchor)}" class="collection-film" style="--film-ratio: {width} / {height}">
     <video autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" draggable="false" preload="auto" poster="{escape(poster)}" width="{width}" height="{height}" aria-label="{escape(label)}">
-      <source src="{escape(asset)}.mp4?v=audio-1" type="video/mp4">
+      <source src="{escape(asset)}.mp4?v=audio-1" type="video/mp4">{caption_track}
     </video>
     <button class="film-sound" type="button" aria-label="Audio del film" aria-pressed="false" hidden>
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -265,6 +269,7 @@ def editorial_page(entry, next_entry, runway_href):
         opening_film = collection_film(
             f"{slug}-film", film["asset"], f"Video della collezione {entry['title']}",
             int(film["width"]), int(film["height"]),
+            captions=film.get("captions"),
         )
     runway = ""
     if runway_href:
@@ -369,6 +374,7 @@ document(
 </main>""",
     styles=ABOUT_STYLES,
     favicon="media/portfolio/croce.png",
+    theme_color="#007100",
 )
 
 document("da-vicino.html", "Da vicino", "close-page", """

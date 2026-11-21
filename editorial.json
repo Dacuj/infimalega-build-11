@@ -768,9 +768,10 @@
       }
     ],
     "film": {
-      "asset": "media/ammassimiliano/presentation",
+      "asset": "media/ammassimiliano/che-cose-infimalega",
       "width": 960,
-      "height": 720
+      "height": 720,
+      "captions": "media/ammassimiliano/che-cose-infimalega.it.vtt"
     }
   }
 ]
